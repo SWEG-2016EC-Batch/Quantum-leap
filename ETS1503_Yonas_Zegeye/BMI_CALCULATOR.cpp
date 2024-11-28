@@ -3,7 +3,7 @@
 using namespace std;
 int main(){
      while(true){
-        int counter1=0,attemptCount=3,counter2=counter1,counter3=counter1;
+        int counter1=0,attemptCount=3,counter2=counter1,counter3=counter1,counter4=counter1;
         float weight,height,suggestedWeight,yourBodyMassIndex;
         firstLabel:
         cout<<"please enter your weight in kilograms ?"<<endl;
@@ -23,12 +23,10 @@ int main(){
                 break;
         }
       }
-
             cout<<"please enter your height in meters ?"<<endl;
             cin>>height;
             secondLabel:
             yourBodyMassIndex = weight/(height*height);
-
     if (cin.fail()){
          counter2++;
          cin.clear();
@@ -53,18 +51,15 @@ int main(){
             cout<<"your body mass index is : "<<yourBodyMassIndex<<endl;
             cout<<"you are under weight! you need to gain "<<suggestedWeight<<"kilograms"<<endl;
         } 
-
         else if(yourBodyMassIndex>24.9){
             suggestedWeight = 24.9*height*height;
             weight -=suggestedWeight;
             cout<<"your body mass index is : "<<yourBodyMassIndex<<endl;
             cout<<"you are overweight! you need to lose "<<weight<<"kilograms"<<endl;
         }
-
         else{
             cout<<"you are in normal weight! your body mass index is : "<<yourBodyMassIndex<<"keep going!"<<endl;
         }
-
             int choice;
             thirdLabel:
             cout << "Do you want to calculate again?\n press 1 to continoue 0 to exit: "<<endl;
@@ -90,7 +85,16 @@ int main(){
     else if (choice == 0){
            break; // Exit the loop after 3 failed attempts
         }
+        else {
+            counter4++;
+            if (counter4==1||counter4==2){
+                    cout<<"please input 1 to continue or 0 to exit"<<endl;
+                    goto thirdLabel;
+            }
+            else if(counter4==3){
+                    break;
+            }
+        }
     }
   }
 }
-
