@@ -6,7 +6,9 @@ int main(){
   int num;
    do
    {
-      float weight,height,suggestedWeight,yourBodyMassIndex,counter = 1;
+      float weight,height,suggestedWeight,yourBodyMassIndex;
+      int counter = 1;
+       // Input weight with validation
         line10:
             cout<< " please enter your weight in kilograms ?";
             cin>>weight;         
@@ -17,35 +19,37 @@ int main(){
                   counter++;
                      if ( counter <= 2 )  
                        {               
-                         cout << " you have only one chance Please inter valid input " <<endl;
+                         cout << " Invalid input, you have only one chance Please inter valid input " <<endl;
                        }
                      if ( counter == 3 )
                         {
                             cout << " You are completed your chance ";
-                            break;
+                            break; // Exit the program if input failed too many times
                         }
                           goto line10;
-                        }                      
+                        }
+                  // Input height with validation
+                  int temp = 1;
                 line28: 
                         cout<<"please enter your height in meters ?";
                         cin>>height;
-                  if ( cin.fail() ) 
+                  if ( cin.fail() || height == 0 ) 
                     {
                       cin.clear();
                       cin.ignore();
-                      counter++;
-                      if ( counter <= 2 )  
+                      temp++;
+                      if ( temp <= 2 )  
                         {
-                          cout << " you have only one chance Please inter valid input " <<endl;
+                          cout << " Invalid input, you have only one chance Please inter valid input " <<endl;
                          } 
-                      if ( counter == 3 )
+                      if ( temp == 3 )
                         {
                             cout << " You are completed your chance ";
-                            break;
+                            break; // Exit the program if input failed too many times
                         } 
                           goto line28;                                    
                         }
-                                       
+                // Calculate BMI                       
        yourBodyMassIndex = weight/(height*height);
             if(yourBodyMassIndex<18.5)
              {
@@ -66,35 +70,27 @@ int main(){
                     cout<<"you need to lose "<<weight<<"kilograms"<<endl;
             }
         else{
-               cout<<"your body mass index is : "<<yourBodyMassIndex<<"you are in a normal shape.keep going!"<<endl;
+               cout<<"Your body mass index is : "<<yourBodyMassIndex<<"you are in a normal shape.keep going!"<<endl;
            } 
-                  for ( int counter = 1; counter <= 2; counter++ )
-                       {       
+                     // Continue or terminate the program
+                     int var = 1;
+                 line76:
                            cout << " Please inter 1 to continue or 0 to terminate"<<endl;
                            cin >> num;
                     
-                       if ( cin.fail() ) 
+                       if ( cin.fail() || (num != 1 && num != 0) ) 
                          {
                             cin.clear();
                             cin.ignore();
-                                if ( counter == 2 )
+                            var++;
+                                if ( var == 3 )
                                   {
+                                    cout << " You are completed your chance ";
                                     break;
                                   }
-                               cout << " you have only one chance Please inter valid input " <<endl;                                       
-                        } 
-                        else if ( num == 0 )
-                               {
-                                  break;
-                               } 
-                        else {
-                            if ( counter == 2 )
-                                  {
-                                    break;
-                                  }
-                               cout << " you have only one chance Please inter valid input " <<endl;                              
-                        }                        
-                      }
-    } while ( num == 1 );
+                               cout << " Invalid input, you have only one chance Please inter valid input " <<endl; 
+                               goto line76;                                                                    
+                        }                                                                  
+          } while ( num == 1 );
     return 0;
 }
