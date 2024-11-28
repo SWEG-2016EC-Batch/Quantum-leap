@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <iomanip>
 using namespace std;
 
 int main(){
@@ -12,7 +12,7 @@ int main(){
         line10:
             cout<< " please enter your weight in kilograms ?";
             cin>>weight;         
-               if ( cin.fail() ) 
+               if ( cin.fail() || weight < 0 ) 
                  {
                   cin.clear();
                   cin.ignore();
@@ -33,7 +33,7 @@ int main(){
                 line28: 
                         cout<<"please enter your height in meters ?";
                         cin>>height;
-                  if ( cin.fail() || height == 0 ) 
+                  if ( cin.fail() || height <= 0 ) 
                     {
                       cin.clear();
                       cin.ignore();
@@ -51,9 +51,10 @@ int main(){
                         }
                 // Calculate BMI                       
        yourBodyMassIndex = weight/(height*height);
+          cout << fixed << setprecision(2); // To format floating-point numbers to 2 decimal places
             if(yourBodyMassIndex<18.5)
              {
-                  suggestedWeight = 18.5*height*height; //determines the suggested weight if the person is underweight.
+                  suggestedWeight = 18.5*height*height; //determines the suggested weight if the person is underweight
 
                   suggestedWeight -= weight;
 
