@@ -1,15 +1,15 @@
 #include <iostream>
-#include <iomanip> //for setprecision
+#include <iomanip> //To set the setprecision of the BMI result
 using namespace std;
 int main(){
      while(true){
-        int counter1=0,attemptCount=3,counter2=counter1,counter3=counter1,counter4=counter1;
+        int counter1=0,attemptCount=3,counter2=counter1,counter3=counter1,counter4=counter1,choice;
         float weight,height,suggestedWeight,yourBodyMassIndex;
         firstLabel:
         cout<<"please enter your weight in kilograms ?"<<endl;
         cin>>weight;
           //Validate user input 
-     if (cin.fail()){
+     if (cin.fail()||weight<0){
          counter1++;
          cin.clear();
          cin.ignore();
@@ -23,15 +23,15 @@ int main(){
                 break;
         }
       }
+            secondLabel:
             cout<<"please enter your height in meters ?"<<endl;
             cin>>height;
-            secondLabel:
-            yourBodyMassIndex = weight/(height*height);
-    if (cin.fail()){
+
+    if (cin.fail() || height <= 0 ){
          counter2++;
          cin.clear();
          cin.ignore();
-        if(counter2==1 || counter2 ==2){
+        if(counter2 == 1 || counter2 == 2){
              cout<<"pLease input positive integer value only"<<endl;
              cout<<"You have"<<attemptCount-counter2<<"tries remaining"<<endl;
              goto secondLabel;
@@ -41,9 +41,8 @@ int main(){
             break; // Exit the loop after 3 failed attempts
         }
    }
-   // Format floating-point numbers to 2 decimal places
-    if(yourBodyMassIndex >0)
-    {
+        yourBodyMassIndex = weight/(height*height);
+        // Format floating-point numbers to 2 decimal places  
         cout<<fixed<<setprecision(2); // To format floating-point numbers to 2 decimal places.
         if(yourBodyMassIndex<18.5){
             suggestedWeight = 18.5*height*height; //determines the suggested weight if the person is underweight.
@@ -60,7 +59,6 @@ int main(){
         else{
             cout<<"you are in normal weight! your body mass index is : "<<yourBodyMassIndex<<"keep going!"<<endl;
         }
-            int choice;
             thirdLabel:
             cout << "Do you want to calculate again?\n press 1 to continoue 0 to exit: "<<endl;
             cin >> choice;
@@ -95,6 +93,5 @@ int main(){
                     break;
             }
         }
-    }
   }
 }
