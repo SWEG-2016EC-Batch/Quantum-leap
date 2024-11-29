@@ -9,7 +9,7 @@ int main(){
       float weight,height,suggestedWeight,yourBodyMassIndex;
       int counter = 1;
        // Input weight with validation
-        line10:
+        linefirst:
             cout<< " please enter your weight in kilograms ?";
             cin>>weight;         
                if ( cin.fail() || weight < 0 ) 
@@ -26,11 +26,11 @@ int main(){
                             cout << " You are completed your chance ";
                             break; // Exit the program if input failed too many times
                         }
-                          goto line10;
+                          goto linefirst;
                         }
                   // Input height with validation
                   int temp = 1;
-                line28: 
+                linesecond: 
                         cout<<"please enter your height in meters ?";
                         cin>>height;
                   if ( cin.fail() || height <= 0 ) 
@@ -47,7 +47,7 @@ int main(){
                             cout << " You are completed your chance ";
                             break; // Exit the program if input failed too many times
                         } 
-                          goto line28;                                    
+                          goto linesecond;                                    
                         }
                 // Calculate BMI                       
        yourBodyMassIndex = weight/(height*height);
@@ -75,7 +75,7 @@ int main(){
            } 
                      // Continue or terminate the program
                      int var = 1;
-                 line76:
+                 linethird:
                            cout << " Please inter 1 to continue or 0 to terminate"<<endl;
                            cin >> num;
                     
@@ -90,7 +90,7 @@ int main(){
                                     break;
                                   }
                                cout << " Invalid input, you have only one chance Please inter valid input " <<endl; 
-                               goto line76;                                                                    
+                               goto linethird;                                                                    
                         }                                                                  
           } while ( num == 1 );
     return 0;
