@@ -46,5 +46,6 @@ int main() {
             goto label_3;
             }
     }
+return 0;
 }
 
