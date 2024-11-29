@@ -37,5 +37,6 @@ int main()
     cout<<"Please say 'Y' for yes and 'N' for no"<<endl;
     goto label3;
     }
+    return 0;
 }
 
