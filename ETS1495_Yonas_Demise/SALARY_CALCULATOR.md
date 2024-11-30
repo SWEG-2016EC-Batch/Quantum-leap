@@ -41,10 +41,10 @@
 ```mermaid
 graph TD;
     A([start]) --> B[/Read base_salary, working_hours, bonus_rate/];
-    B -->C[bonus_payment= bonus_rate * working_hours
-           gross_salary= base_salary + bonus_payment
-           deduction= &#40; gross_salary*0.15&#41; + &#40;gross_salary*0.05&#41;
-           net_salary= gross_salary - deduction];
+    B -->C[bonus_payment=bonus_rate*working_hours
+           gross_salary=base_salary+bonus_payment
+           deduction=&#40;gross_salary*0.15&#41;+&#40;gross_salary*0.05&#41;
+           net_salary=gross_salary-deduction];
     C -->D[/print net_salary/];
     D--> E([End]);
 
