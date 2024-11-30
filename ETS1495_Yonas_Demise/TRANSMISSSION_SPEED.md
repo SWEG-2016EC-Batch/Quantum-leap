@@ -28,11 +28,14 @@ step 7: stop
 
 ```mermaid
 graph TD;
-    A[Start] --> B{Decision};
-    B -->|Yes| C[Do Task A];
-    B -->|No| D[Do Task B];
-    C --> E[End];
-    D --> E[End];
+    A[Start] --> B{Read file_size};
+    B -->C[file_size*=1048576];
+    C -->D[time=file_size/transmission_speed];
+    D--> E[days=time/86400\
+          hours=time/3600\
+          minutes=time/60];
+    E --> F[Print time, days, hours, minutes];
+    F --> G[End]
 
 
 
