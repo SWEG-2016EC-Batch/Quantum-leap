@@ -25,9 +25,7 @@
 step 6: print days,hours,minutes and time\
 step 7: stop
 ## Flow Chart
-flowchart LR
 
-    id1([start])
 
 
 
