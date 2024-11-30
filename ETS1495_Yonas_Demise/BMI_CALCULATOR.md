@@ -22,15 +22,14 @@
   ```
 + *step 5*: display BMI
 + *step 6*: check the BMI value and display the message:\
-                6.1. if BMI<18,\
+   6.1. if BMI<18,\
   
                      > you are underweight\
-  
-              6.2. if BMI>25,\
+   6.2. if BMI>25,\
   
                   > you are overweight\
   
-                6.3. if 18<BMI<25,\
+   6.3. if 18<BMI<25,\
   
                    > your weight is normal
 + *step 7*: ask if the person wants to calculate again:\
