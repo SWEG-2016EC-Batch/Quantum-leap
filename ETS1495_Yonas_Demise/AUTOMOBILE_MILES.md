@@ -20,10 +20,10 @@
   ```mermaid
   graph TD;
 
-    A([Start]) --> B[/Read: capacity and miles_per_gallon/];
-    B --> C[total_miles&equals;capacity*miles_per_gallon];
-    C --> D[print: total_miles];
-    D --> E([End]);
+   A([Start]) --> B[/Read: capacity and miles_per_gallon/];
+   B --> C[total_miles&equals;capacity * miles_per_gallon];
+   C --> D[print: total_miles];
+   D --> E([End]);
     
 
         
