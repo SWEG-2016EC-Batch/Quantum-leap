@@ -35,7 +35,7 @@ graph TD;
           hours=time/3600
           minutes=time/60];
     E --> F[/Print: time, days, hours, minutes/];
-    F --> G[(End)]
+    F --> G([End])
 
 
 
