@@ -9,8 +9,8 @@
                            - if BMI<18, the person is underweight\
                            - if BMI>25, the person is overweight\
                            - if 18< BMI < 25, the person is normal weight
-#Algorithm Design
-   ##Pseudocode 
+# Algorithm Design
+ ## Pseudocode 
  + *step 1*: start
  + *step 2*: read the inputes, weight and height
  + *step 3*: check if the inputes are positive value:\
