@@ -28,7 +28,7 @@ step 7: stop
 
 ```mermaid
 graph TD;
-    A([start]) --> B[Parallelogram - Read file_size];
+    A([start]) --> B[input: Read file_size];
     B -->C[file_size*=1048576];
     C -->D[time=file_size/transmission_speed];
     D--> E[days=time/86400
