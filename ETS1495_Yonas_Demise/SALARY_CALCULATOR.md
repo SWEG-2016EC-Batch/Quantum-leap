@@ -1,6 +1,6 @@
 # Problem Analysis
-**Input** - base salary, bonus rate, working hours
-**Output** - gross salary, bonus payment, net salary
+**Input** - base salary, bonus rate, working hours\
+**Output** - gross salary, bonus payment, net salary\
 **Operation** - \
           - read the inputs\
           - calculate the bonus payment\ 
