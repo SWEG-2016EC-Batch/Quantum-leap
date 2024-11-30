@@ -26,6 +26,13 @@ step 6: print days,hours,minutes and time\
 step 7: stop
 ## Flow Chart
 
+```mermaid
+graph TD;
+    A[Start] --> B{Decision};
+    B -->|Yes| C[Do Task A];
+    B -->|No| D[Do Task B];
+    C --> E[End];
+    D --> E[End];
 
 
 
