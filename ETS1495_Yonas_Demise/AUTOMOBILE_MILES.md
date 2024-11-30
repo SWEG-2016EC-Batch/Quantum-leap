@@ -21,8 +21,8 @@
   graph TD;
 
     A([Start]) --> B[/Read: capacity and miles_per_gallon/];
-    B --> C[total_miles = capacity &times; miles_per_gallon];
-    C --> D[print: totl_miles];
+    B --> C[total_miles &equals; capacity &times; miles_per_gallon];
+    C --> D[print: total_miles];
     D --> E([End]);
     
 
