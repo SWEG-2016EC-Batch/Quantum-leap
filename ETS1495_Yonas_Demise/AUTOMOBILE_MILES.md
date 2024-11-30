@@ -20,10 +20,10 @@
   ```mermaid
   graph TD;
 
-    A([Stadium]) --> B[/parallelogram/];
-    B --> C[Rectangle];
-    C --> D{desision};
-    D --> E([stadium]);
+    A([Start]) --> B[/Read: capacity and miles_per_gallon/];
+    B --> C[total_miles = capacity &times miles_per_gallon];
+    C --> D[print: totl_miles];
+    D --> E([End]);
     
 
         
