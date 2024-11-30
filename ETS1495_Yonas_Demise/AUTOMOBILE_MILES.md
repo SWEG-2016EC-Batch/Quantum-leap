@@ -2,9 +2,9 @@
 + **Input** - capacity of fuel tank, miles per gallon
 + **Output** - total  miles
 + **Operation** -
-               - read the inputs
-               - calculate total miles
-               - display total miles
+               - read the inputs\
+               - calculate total miles\
+               - display total miles\
 # Pseudocode 
 *step 1:* start
 *step 2:* read the inputs, capacity and miles per gallon
