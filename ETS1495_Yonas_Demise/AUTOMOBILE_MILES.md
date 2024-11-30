@@ -16,8 +16,10 @@
 + *step 4:* display total miles
 + *step 5:* stop
   ## Flowchart
+  
   ```mermaid
 graph TD;
+
     A[Rectangle] --> B(Rounded Rectangle);
     B --> C([Stadium]);
     C --> D[[Subroutine]];
