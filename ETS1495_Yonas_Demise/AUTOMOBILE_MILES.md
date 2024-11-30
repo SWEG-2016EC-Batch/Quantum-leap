@@ -1,7 +1,7 @@
 # Problem Analysis
 + **Input** - capacity of fuel tank, miles per gallon
 + **Output** - total  miles
-+ **Operation** 
++ **Operation** -\
                - read the inputs\
                - calculate total miles\
                - display total miles
