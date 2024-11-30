@@ -18,7 +18,7 @@
   ## Flowchart
   
   ```mermaid
-graph TD;
+  graph TD;
 
     A[Rectangle] --> B(Rounded Rectangle);
     B --> C([Stadium]);
