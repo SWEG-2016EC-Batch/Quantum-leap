@@ -8,10 +8,10 @@
 # Algorithm Design 
 ## Pseudocode 
 + *step 1:* start
-+ *step 2:* read the inputs, capacity and miles per gallon
++ *step 2:* read the inputs, capacity and miles_per_gallon
 + *step 3:* calculate total miles as,
    ```
-    total miles = capacity * miles per gallon
+    total miles = capacity * miles_per_gallon
    ```
 + *step 4:* display total miles
 + *step 5:* stop
