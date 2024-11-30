@@ -20,12 +20,10 @@
   ```mermaid
   graph TD;
 
-    A[Rectangle] --> B(Rounded Rectangle);
-    B --> C([Stadium]);
-    C --> D[[Subroutine]];
-    D --> E[(Cylinder)];
-    E --> F((Circle));
-    F --> G>Asymmetric Shape];
-    G --> H{Decision};
+    A([Stadium]) --> B[/parallelogram/];
+    B --> C[Rectangle];
+    C --> D{desision};
+    D --> E([stadium]);
+    
 
         
