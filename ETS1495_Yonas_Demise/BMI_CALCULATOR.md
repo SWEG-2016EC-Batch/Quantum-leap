@@ -30,21 +30,7 @@
                 7.2. if the answer is no, go to step 8
 + *step8*: stop
 ## Flowchart
-```mermaid
-graph TD;
-    A([Start]) --> B[/read: weight, height/];
-    B --> C{weight<=0, height<=0};
-    C --> |False| D[BMI=weight/height];
-    C --> |True| K([End]);
-    D --> F{BMI<18};
-    F --> |True| G[/print: BMI\ print: "You are underweight!"/];
-    F --> |False| H{BMI>25};
-    H --> |True| I[/print: BMI\ print: "You are overweight!"/];
-    H --> |False| J[/print: BMI\ print: "Your weight is normal"/];
-    F --> B[/read: weight, height/];;
-    I --> B[/read: weight, height/];;
-    J --> B[/read: weight, height/];;
-    F --> K([End]);
+
     
   
 
