@@ -15,3 +15,10 @@
    ```
 + *step 4*: print result
 + *step 5*: stop
+## Flowchart
+```mermaid
+graph TD;
+    A([start]) --> B[/Read: num1, num2/];
+    B -->C[result= pow#40num1,num2#41];
+    C --> D[/Print: result];
+    D --> E([End])
