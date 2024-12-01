@@ -20,5 +20,5 @@
 graph TD;
     A([start]) --> B[/Read: num1, num2/];
     B -->C[result= pow#40num1,num2#41];
-    C --> D[/Print: result];
+    C --> D[/Print: result/];
     D --> E([End])
