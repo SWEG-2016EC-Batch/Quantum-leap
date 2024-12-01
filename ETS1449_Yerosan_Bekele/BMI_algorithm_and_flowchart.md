@@ -17,11 +17,12 @@
           5.1. if BMI<18.5, "you are underweight"\
           5.2. if BMI>25, "you are overweight"\
           5.3. else, "your weight is normal"
-+ *step 6*: ask ```Do you want to continue?\ny for yes | other key for no:```\
++ *step 6*: ask ```Do you want to continue? y for yes | other key for no:```\
                 7.1. if yes, go to step 2\
                 7.2. if no, go to step 7
 + *step 7*: stop
 
   ## Flowchart
 
-![Untitled Diagram](https://github.com/user-attachments/assets/d6aedf88-e439-43f8-8ac1-81c867352753)
+![Untitled Diagram](https://github.com/user-attachments/assets/54832561-834a-4a4f-b7e1-f680e1425ed5)
+
