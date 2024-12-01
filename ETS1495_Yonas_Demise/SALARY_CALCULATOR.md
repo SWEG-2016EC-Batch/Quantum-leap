@@ -37,7 +37,7 @@
   
 + *step 7*: print net salary
 + *step 8*: stop
-  ## Flow Chart
+  ## Flowchart
 ```mermaid
 graph TD;
     A([start]) --> B[/Read: base_salary, working_hours, bonus_rate/];
