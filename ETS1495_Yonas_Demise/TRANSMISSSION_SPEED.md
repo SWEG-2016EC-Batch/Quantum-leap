@@ -25,7 +25,7 @@
         5.2: `hours= time/3600`\
         5.3 `minutes= time/60`\
 + *step 6*: print days,hours,minutes and time\
-+ *step 7*: ask the user if they want to calculate again\n
++ *step 7*: ask the user if they want to calculate again\
          7.1. if the answer is yes, go to step 2
          7.2 id the answer is no, go to step 8
 + *step 8*: stop
@@ -43,7 +43,7 @@ graph TD;
     F --> G{the user wants to calculate again};
     G --> |True| B[/Read file_size/];
     G --> |False| H[/Print: time, days, hours, minutes/];
-    H --> |False|I([End]);
+    H --> I([End]);
     D --> |True| I([End]);
 
 
