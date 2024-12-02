@@ -9,7 +9,7 @@
           If the input is invalid, read the inputs again again until counter =2.  
           - calculate the bonus payment as  bonusPayment = bonusRatePerHour * baseSalary\
           - calcualate the gross salary as grossSalary = baseSalary + bonuspayment \ 
-          - calculate paymentDeductions and  net salary as paymentDeductions = 0.05 * 0.15 * baseSalary and netSalary = grossSalary - paymentDeductions\
+          - calculate paymentDeductions and  net salary as paymentDeductions = 0.05 * baseSalary + grossSalary * 0.15 and netSalary = grossSalary - paymentDeductions\
           - print grossSalary, bonusPayment and netSalary
           - Read choice\
           - check if choice is 1 or 0 or invalid input\
@@ -49,7 +49,7 @@
   
 - **step 12**: calculate total deductions of pension(5%) and tax(15%)  as,
   ```
-  deduction= (gross_salary*0.05) + (gross_salary*0.15)
+  0.05 * baseSalary + grossSalary * 0.15
   ```
 - **step 13**: calculate netSalary as,
   ```
