@@ -14,7 +14,7 @@
  + *step 1*: start
  + *step 2*: read the inputes, weight and height
  + *step 3*: check if the inputes are positive value:\
-                 3.1. if weight<=0 or height<=0, goto step 7\
+                 3.1. if weight<=0 or height<=0, goto step 2\
                  3.2. if weight>0 or height>0, goto step 4
 + *step 4*: calculate Body Mass Index as,
   ```
