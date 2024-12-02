@@ -11,7 +11,7 @@
 ## Pseudocode
 + *step 1*: start
 + *step 2*: read base salary, working hours and bonus rate\
-          2.1. if base salary<=0,working hours<=0 or bonus rate<0 , go to step 2 and ask again
+          2.1. if base salary<=0,working hours<=0 or bonus rate<0 , go to step 2 and ask again\
           2.2. if base salary>0, working hour >0, and bonus rate >0, go to step 3
 + *step 3*: calculate bonus payment as,
   
@@ -39,7 +39,7 @@
   
 + *step 7*: print net salary
 + *step 8*: ask the user if he/she want to calculate again\
-         8.1. if the answer is yes, go to step 2
+         8.1. if the answer is yes, go to step 2\
          8.2. if the answer is no, go to step 8
 + *step 8*: stop
   ## Flowchart
