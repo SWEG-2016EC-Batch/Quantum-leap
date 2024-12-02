@@ -37,7 +37,7 @@
 - **step 9**: Read bonuPayment and check if bonusPayment >=0 and < 1\
            9.1 then go to step 9\
            9.2 else if counter =1 or counter =2 go to step 8
-           9.3 else go to step 17
+           9.3 else go to 17
 - **step 10**: calculate bonusPayment as,
   ```
    bonusPayment = bonusRatePerHour * weeklyWorkingHours
