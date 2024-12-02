@@ -24,54 +24,25 @@
 
 ## Flowchart
 
-```plaintext
-        +-------------------------------+
-        | Start                        |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Input name, hours, bonus rate,|
-        | and base salary               |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Validate bonus rate:          |
-        | If invalid, prompt again      |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Calculate bonus payment =     |
-        | overtime hours * rate         |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Calculate gross salary =      |
-        | base salary + bonus           |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Calculate deductions:         |
-        | Pension = 5% base, Tax = 15%  |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Calculate net salary =        |
-        | gross salary - deductions     |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Output bonus, gross, net      |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | End                          |
-        +-------------------------------+
-```
+```mermaid
+---
+config:
+  layout: TD
+  look: default
+  theme: neutral
+---
+graph TD;
+    A([Start]) --> B[/Input Name/];
+    B --> M[/Weekly working hours/]; 
+    M --> N[/Bonus rate per hour/];
+    N --> O[/Base salary/];
+    O --> C{If bonus rate < 0?};
+    C --> |"Yes"|D[/Prompt user to enter a valid bonus rate/];
+    D --> N;
+    C --> |"No"|E[ bonus_payment = weekly_working_hours - 48 * base_salary/192 * bonus_rate_per_hour/100];
+    E --> F[gross salary: Base salary + Bonus payment];
+    F --> G[deductions: Pension = 0.05 * Base salary];
+    G --> Z[Tax = 0.15 * Base salary];
+    Z --> H[net salary: Gross salary - Deductions];
+    H --> K[/Bonus payment, Gross salary, Net salary/] ;
+    K --> J([Terminate]);
