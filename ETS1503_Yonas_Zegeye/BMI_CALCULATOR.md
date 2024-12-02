@@ -96,9 +96,10 @@ g-->h[suggestedweight = 18.5 * height*height, suggestedweight -= weight];
 g-->j{BMI > 24.9}
 j-->|true| k[suggestedweight = 24.9 * height*height,weight -= suggestedweight ]
 j-->|false| K[/yourBodyMassIndex,"normalweight"/]
+K-->t[/choice/]
 k-->m[/yourBodyMassIndex,weight,"overweight"/];
 h-->y[/suggestedweight/,yourBodyMassIndex,"underweight"/];
-y-->t[/choice/]
+y-->t
 m-->t
 t-->u{choice= 1}
 u-->c
@@ -110,4 +111,3 @@ v-->x
 s-->x
 
 ```
-
