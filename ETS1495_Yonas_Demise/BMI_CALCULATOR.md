@@ -34,8 +34,8 @@
 graph TD;
     A([start]) --> B[/Read: weight, height/];
     B -->C{weight<=0 or height<=0};
-    C --> |False| D[BMI=weight/#40;height*height];
-    C --> |True| B[/Read: weight, height];
+    C --> |False| D[BMI=weight/#40;height*height#41;];
+    C --> |True| B[/Read: weight, height/];
     D --> E{BMI<18};
     E --> |True| F[/print: BMI\ "underweight"/];
     E --> |False| G{BMI>25};
