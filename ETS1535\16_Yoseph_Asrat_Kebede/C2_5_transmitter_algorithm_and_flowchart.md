@@ -22,55 +22,26 @@
 
 ## Flowchart
 
-```plaintext
-        +-------------------------------+
-        | Start                        |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Prompt user for unit type     |
-        | (t, g, m, k, b)               |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Prompt user for file size     |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Use switch to determine size  |
-        | multiplier for unit type      |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | If unit type is invalid,      |
-        | display error and exit        |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Calculate total transfer time |
-        | (bytes / 960) in seconds      |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Convert seconds to years,     |
-        | months, weeks, days, etc.     |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Display transfer time in all  |
-        | time units                    |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | End                          |
-        +-------------------------------+
+
+       ```mermaid
+graph TD
+    A([Start]) --> B["Display: This is a BMI test"]
+    B --> C[/Input height in meters/]
+    C --> D{Is height = 0?}
+    D -- Yes --> E["Display: Invalid input. Enter correct height"] --> C
+    D -- No --> F[/Input weight in kilograms/]
+    F --> G(["Calculate BMI"])
+    G --> H["Display BMI value"]
+    H --> I{Is BMI > 25?}
+    I -- Yes --> J["Display: You are overweight"]
+    I -- No --> K{Is BMI between 18.5 and 25?}
+    K -- Yes --> L["Display: You have a normal weight"]
+    K -- No --> M["Display: You are underweight"]
+    J --> N{Ask user: Calculate again?}
+    L --> N
+    M --> N
+    N -- Yes --> C
+    N -- No --> O([End])
+
 ```
 
