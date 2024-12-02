@@ -20,8 +20,8 @@ int main() {
     cin>>base_salary;
     bonus_payment = (weekly_working_hours - 48) * ((base_salary/192) * (bonus_rate_per_hour/100));
     gross_salary = base_salary + bonus_payment;
-    pension = base_salary * 0.05;
-    tax = base_salary * 0.15;
+    pension = gross_salary * 0.05;
+    tax = (gross_salary-pension) * 0.15;
     net_salary = gross_salary - (pension + tax);
     cout<<"Well "<<name<<" ,your bonus payment is "<<bonus_payment<<endl<<"Your gross salary is "<<gross_salary<<endl<<"Finally, your net salary is "<<net_salary;
     return 0;
