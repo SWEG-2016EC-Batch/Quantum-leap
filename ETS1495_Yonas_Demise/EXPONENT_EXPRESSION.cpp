@@ -24,9 +24,13 @@ int main()
         cin.ignore();
         goto label2;
     }
+    if(num1==0 && num2<=0) {
+        cout<<"ERROR!"<<endl;
+    } else {
     result= pow(num1,num2);
     cout<<"The result is: "<<result<<endl;
     label3:
+    }
     cout<<"Do you want to calculate again?\n say 'Y' for yes and 'N' for no"<<endl;
     cin>>answer;
     if(answer=='Y') {
