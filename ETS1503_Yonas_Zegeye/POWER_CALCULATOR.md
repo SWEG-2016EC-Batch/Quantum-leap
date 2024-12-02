@@ -56,7 +56,7 @@
           - 11.2 else goto step 12
 
 - **step 12**:check if baseNumber and exponentNumber are 0
-                - 12.1 then display a message for the user.
+                - 12.1 then display a message for the user.\
                 - 12.2 else display poweredNumber.
 
 - **step 13**:Increment counter3 by 1.
