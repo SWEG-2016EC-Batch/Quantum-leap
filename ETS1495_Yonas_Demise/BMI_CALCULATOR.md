@@ -30,19 +30,20 @@
                 7.2. if the answer is no, go to step 8
 + *step8*: stop
 ## Flowchart
-
+```mermaid
 graph TD;
-    A([start]) --> B[/Read: base_salary, working_hours, bonus_rate/];
-    B -->C{#40;base_salary<=0#41; or #40;working_hours<=0#41; or #40;bonus_rate<0#41;};
-    C --> |False| D[bonus_payment=bonus_rate*working_hours];
-    C --> |True| B[/Read: base_salary, working_hours, bonus_rate/];
-    D --> E[gross_salary=base_salary*bonus_payment];
-    E --> F[deduction= #40;#40;base_salary*0.05#41; + #40;gross_salary*0.15#41;#41;];
-    F --> G[net_salary = gross_salary - deduction];
-    G --> H{the user wants to calculate again};
-    H --> |True| B[/Read: base_salary, working_hours, bonus_rate/];
-    H --> |False| I[/print: net_salary/];
-    I --> J([End]);
+    A([start]) --> B[/Read: weight, height/];
+    B -->C{weight<=0 or height<=0};
+    C --> |False| D[BMI=weight/#40;height8height#41;];
+    C --> |True| B[/Read: weight, height];
+    D --> E{BMI<18};
+    E --> |True| F[/print: BMI\ "underweight"/];
+    E --> |False| G{BMI>25};
+    G --> |True| H[/print: BMI\ "overweight"/];
+    G --> |False| I[/print: BMI\ "normal weight"/];
+    I --> J{the user wants to calculate again};
+    J --> |True| B[/Read: weight, height/];
+    J --> |False| K([End]);
     
   
 
