@@ -26,7 +26,7 @@ graph TD;
     B --> C{input values are valid};
     C --> |False| B[/Read: num1, num2/];
     C --> |True| D{num1=0 and num2=0};
-    D --> |True| E[/print: ERROR?];
+    D --> |True| E[/print: ERROR/];
     D --> |False| F{ num1=0 and num2<0};
     F --> |True| G[/print: ERROR/];
     F --> |False| H[result=pow#40;num1,num2#41;];
