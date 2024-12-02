@@ -115,15 +115,17 @@ Validate the height similarly to weight, allowing up to 3 attempts.
  20. If the user enters 0, exit the loop and terminate the program.
 
 21. stop the program.
+ 
  ##flow-chart
+ 
  ```mermaid
 
 graph TD;
 
 A[weight]---->B [height]
 
-B---->C[BMI]
+B---->C[BMI];
 
-C--->D[end]
+C--->D[end];
 
 ```
