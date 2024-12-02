@@ -7,9 +7,12 @@ int main()
    double base_salary,gross_salary,net_salary,bonus_payment,deductions;
    float bonus_rate,working_hours;
    char answer;
-   string name;
+   string first_name;
+   string middle_name;
    cout<<"please enter the first name of the employee: "<<endl;
    cin>>name;
+   cout<<"please enter the middle name of the employee: "<<endl;
+   cin>>middle_name;
    label1:
    cout<<"please enter the base salary:"<<endl;
    cin>>base_salary;
@@ -41,7 +44,7 @@ int main()
    net_salary= gross_salary - deductions;
    cout<<"The gross salary of Mr/Mrs "<<name<<" is "<<gross_salary<<endl;
    cout<<"The bonus payment of Mr/Mrs "<<name<<" is "<<bonus_payment<<endl;
-   cout<<"The net salary of Mr/Mrs "<<name<<" is "<<net_salary<<endl;
+   cout<<"The net salary of Mr/Mrs "<<first_name<<" "<<second_name<<" is "<<net_salary<<endl;
    label3:
    cout<<"do you want to calculate again?\n say 'Y' for yes and 'N' for no"<<endl;
    cin>>answer;
