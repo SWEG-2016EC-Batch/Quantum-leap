@@ -37,6 +37,7 @@ graph TD;
     B -->C[file_size*=1048576];
     C --> D{file_size<0};
     D --> |False| E[time=file_size/transmission_speed];
+    D --> |True| B[/Read file_size/]; ;
     E--> F[days=time/86400
           hours=time/3600
           minutes=time/60];
@@ -44,7 +45,7 @@ graph TD;
     G --> |True| B[/Read file_size/];
     G --> |False| H[/Print: time, days, hours, minutes/];
     H --> I([End]);
-    D --> |True| I([End]);
+    
 
 
 
