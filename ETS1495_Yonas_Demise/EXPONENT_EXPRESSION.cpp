@@ -13,7 +13,7 @@ int main()
         cout<<"The input you entered is not correct, please enter a number only!"<<endl;
         cin.clear();
         cin.ignore();
-        goto label1;
+        goto label1;  // to allow the user to enter the first value again
     }
     label2:
     cout<<"Please enter the exponent:"<<endl;
@@ -22,7 +22,7 @@ int main()
         cout<<"The input you entered is not correct, please enter a number only!"<<endl;
         cin.clear();
         cin.ignore();
-        goto label2;
+        goto label2;    // to allow the user to enter the second value again
     }
     if(num1==0 && num2<=0) {
         cout<<"ERROR!"<<endl;
