@@ -118,7 +118,7 @@ Validate the height similarly to weight, allowing up to 3 attempts.
 22. ##flow-chart
 23. ```mermaid
 
-graph TD:
+graph TD;
 
 A[weight]---->B [height]
 
