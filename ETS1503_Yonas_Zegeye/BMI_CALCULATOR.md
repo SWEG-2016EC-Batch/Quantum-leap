@@ -101,7 +101,7 @@ k-->m[/yourBodyMassIndex,weight,"overweight"/];
 h-->y[/suggestedweight/,yourBodyMassIndex,"underweight"/];
 y-->t
 m-->t
-t-->u{choice= 1}
+t-->|choice =1| c
 u-->c
 u-->v{/choice != 1 and 0/}
 v-->t
