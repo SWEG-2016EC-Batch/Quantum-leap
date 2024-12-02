@@ -21,14 +21,14 @@
 - **step 1**: start
 - **step 2**: check the while loop if:\
    2.1 true then go to step 3\
-   2.2 false then go to step 11
+   2.2 false then go to step 17
 - **step 3**: Read employeName
 - **step 4**: Read baseSalary
 - **step 5**: Increment counter by 1
 - **step 6**: check if baseSalary >=0\
            6.1 then go to step 6\
            6.2 else if counter =1 or counter =2 go to step 3
-           6.3 else goto end
+           6.3 else goto step 17
 - **step 7**: Initialize counter by 0 and increment by 1
 - **step 8**: Read weeklyWorkingHours and  check weeklyWorkingHours >=0\
            8.1 then go to step 8\
@@ -37,7 +37,7 @@
 - **step 9**: Read bonuPayment and check if bonusPayment >=0 and < 1\
            9.1 then go to step 9\
            9.2 else if counter =1 or counter =2 go to step 8
-           9.3 else go to end
+           9.3 else go to step 17
 - **step 10**: calculate bonusPayment as,
   ```
    bonusPayment = bonusRatePerHour * weeklyWorkingHours
