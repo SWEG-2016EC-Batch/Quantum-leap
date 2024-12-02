@@ -46,7 +46,7 @@
 ```mermaid
 graph TD;
     A([start]) --> B[/Read: base_salary, working_hours, bonus_rate/];
-    B -->C{cin.fail() || base_salary<=0 || working_hours<=0 || bonus_rate<0};
+    B -->C{ base_salary<=0 || working_hours<=0 || bonus_rate<0};
     C --> |False| D[bonus_payment=bonus_rate*working_hours;
     C --> |True| J([End]);
     D --> E[gross_salary=base_salary*bonus_payment];
