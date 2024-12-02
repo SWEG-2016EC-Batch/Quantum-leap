@@ -22,26 +22,41 @@
 
 ## Flowchart
 
-
-       ```mermaid
-graph TD
-    A([Start]) --> B["Display: This is a BMI test"]
-    B --> C[/Input height in meters/]
-    C --> D{Is height = 0?}
-    D -- Yes --> E["Display: Invalid input. Enter correct height"] --> C
-    D -- No --> F[/Input weight in kilograms/]
-    F --> G(["Calculate BMI"])
-    G --> H["Display BMI value"]
-    H --> I{Is BMI > 25?}
-    I -- Yes --> J["Display: You are overweight"]
-    I -- No --> K{Is BMI between 18.5 and 25?}
-    K -- Yes --> L["Display: You have a normal weight"]
-    K -- No --> M["Display: You are underweight"]
-    J --> N{Ask user: Calculate again?}
-    L --> N
-    M --> N
-    N -- Yes --> C
-    N -- No --> O([End])
-
-```
+```mermaid
+---
+config:
+  layout: TD
+  look: default
+  theme: neutral
+---
+graph TD;
+    A([Start]) --> b{Input unit of data size};
+    b --> c[/t for unit = TeraBytes/];
+    b --> d[/g for unit = GigaBytes/];
+    b --> e[/m for unit = MegaBytes/];
+    b --> f[/k for unit = KiloBytes/];
+    b --> g[/b for unit = Bytes/];
+    d --> h["Input data size"];
+    c --> h;
+    e --> h;
+    f --> h;
+    g --> h;
+    h --> i{Is unit valid?};
+    i --> |"No"|E[/Display 'Invalid input. Check capslock'/] --> F[End]
+    i --> |"Yes"|G["Convert size to Bytes based on unit"]
+    G --> H["Calculate total time: (Size in Bytes / 960)"]
+    H --> I["Breakdown time: years = time / 31536000"]
+    I --> J["time %= 31536000"]
+    J --> K["months = time / 2628288 (average seconds per month)"]
+    K --> L["time %= 2628288"]
+    L --> M["weeks = time / 604800"]
+    M --> N["time %= 604800"]
+    N --> O["days = time / 86400"]
+    O --> P["time %= 86400"]
+    P --> Q["hours = time / 3600"]
+    Q --> R["time %= 3600"]
+    R --> S["minutes = time / 60"]
+    S --> T["seconds = time"]
+    T --> U[/Display the breakdown: years, months, weeks, days, hours, minutes, and seconds/]
+    U --> F[End]
 
