@@ -37,7 +37,7 @@ int main()
    }
    bonus_payment=working_hours*bonus_rate;
    gross_salary=base_salary+bonus_payment;
-   deductions=((gross_salary*0.05) + (gross_salary*0.15));
+   deductions=((base_salary*0.05) + (gross_salary*0.15));
    net_salary= gross_salary - deductions;
    cout<<"The gross salary of Mr/Mrs "<<name<<" is "<<gross_salary<<endl;
    cout<<"The bonus payment of Mr/Mrs "<<name<<" is "<<bonus_payment<<endl;
