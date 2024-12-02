@@ -48,13 +48,13 @@ graph TD;
     A([start]) --> B[/Read: base_salary, working_hours, bonus_rate/];
     B -->C{ &#40;base_salary<=0&#41; or &#40;working_hours<=0&#41; or &#40;bonus_rate<0&#41;};
     C --> |False| D[bonus_payment=bonus_rate*working_hours;
-    C --> |True| J([End]);
     D --> E[gross_salary=base_salary*bonus_payment];
     E --> F[deduction= ((base_salary*0.05) + (gross_salary*0.15))];
     F --> G[net_salary = gross_salary - deduction];
     G --> H{the user wants to calculate again};
     H --> |True| B[/Read: base_salary, working_hours, bonus_rate/];
     H --> |False| I[/print: net_salary/];
+    C --> |True| J([End]);
     I --> J([End]);
     
 
