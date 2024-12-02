@@ -116,16 +116,17 @@ Validate the height similarly to weight, allowing up to 3 attempts.
 
 21. stop the program.
  
- ##flow-chart
+ # flow-chart
  
  ```mermaid
 
 graph TD;
 
-A[weight]---->B [height];
+A-->B;
 
-B---->C[BMI];
+A-->C;
 
-C--->D[end];
+B-->D;
 
+C-->D;
 ```
