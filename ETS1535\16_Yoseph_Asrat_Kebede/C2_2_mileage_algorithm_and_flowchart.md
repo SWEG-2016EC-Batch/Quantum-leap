@@ -13,35 +13,16 @@
 ---
 
 ## Flowchart
-
-```plaintext
-        +-------------------------------+
-        | Start                        |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Input gallons of gas left     |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Input miles per gallon (MPG)  |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Calculate total miles =       |
-        | gallons * MPG                 |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | Output total miles            |
-        +-------------------------------+
-                  |
-                  v
-        +-------------------------------+
-        | End                          |
-        +-------------------------------+
-```
+```mermaid
+---
+config:
+  layout: TD
+  look: default
+  theme: neutral
+---
+graph TD;
+   A([ Start]) --> C[/Input gallons left/];
+    C --> D[/Input miles per gallon/];
+    D --> E[miles_left = MPG * gallons_left;];
+    E --> F[/Display miles left/];
+    F -->J([Terminate]);
