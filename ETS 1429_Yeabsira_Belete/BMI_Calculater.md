@@ -122,7 +122,7 @@ Validate the height similarly to weight, allowing up to 3 attempts.
 
 graph TD;
 
-A[weight]---->B [height]
+A[weight]---->B [height];
 
 B---->C[BMI];
 
