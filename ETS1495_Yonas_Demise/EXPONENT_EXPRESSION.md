@@ -27,6 +27,6 @@ graph TD;
     C --> |False| B[/Read: num1, num2/];
     C --> |True| D{num1=0 and num2<=0};
     D --> |True| E[/print: ERROR/];
-    E --> |False| F[result=pow#40;num1,num2#41;];
+    D --> |False| F[result=pow#40;num1,num2#41;];
     F --> G[/Print: result/];
     G --> H([End]);
