@@ -16,7 +16,7 @@
     total miles = capacity * miles_per_gallon
    ```
 + *step 4:* display total miles
-+ *step 5*: ask the user if they want to calculate again
++ *step 5*: ask the user if they want to calculate again\
          5.1. if the answer is yes, go to step 2\
          5.2. if the answer is no, go to step 5
 + *step 5:* stop
