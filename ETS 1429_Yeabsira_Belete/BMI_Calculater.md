@@ -115,4 +115,40 @@ Validate the height similarly to weight, allowing up to 3 attempts.
  20. If the user enters 0, exit the loop and terminate the program.
 
 21. stop the program.
- 
+ # flow-chart
+
+```mermaid
+
+graph TD;
+
+a((start))-->b[weight,height,suggestedweight,BMI;];
+b-->c[/weight and height/];
+c-->d{/weight and height fail or <= 0};
+d-->n[true];
+n-->p[counter++];
+p-->q{/counter < 3/};
+q-->c;
+q-->s[break];
+d-->e[false];
+e-->f[BMI = weight / height*height];
+f-->g{/BMI < 18.5/};
+g-->h[suggestedweight = 18.5 * height*height];
+h-->i[suggestedweight -= weight];
+g-->j{/BMI > 24.9/};
+j-->k[suggestedweight = 24.9 * height*height];
+k-->l[weight -= suggestedweight];
+j-->m[/BMI/];
+i-->y[/suggestedweight/];
+l-->y[/suggestedweight/];
+y-->t[/num/];
+m-->t;
+t-->u{/num = 1};
+u-->c;
+u-->v{/num != 1 and 0/};
+v-->t;
+u-->w[num = 0];
+w-->x((end));
+v-->x;
+s-->x;
+
+```
