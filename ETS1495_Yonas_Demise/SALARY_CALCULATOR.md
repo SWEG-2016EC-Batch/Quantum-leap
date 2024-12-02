@@ -26,7 +26,7 @@
 + *step 5*: calculate total deductions of pension(5%) and tax(15%)  as,
   
   ```
-  deduction= ((gross_salary*0.5) + (gross_salary*0.15)
+  deduction= ((base_salary*0.5) + (gross_salary*0.15)
   ```
   
 + *step 6*: calculate net salary as,
@@ -43,7 +43,7 @@ graph TD;
     A([start]) --> B[/Read: base_salary, working_hours, bonus_rate/];
     B -->C[bonus_payment=bonus_rate*working_hours
            gross_salary=base_salary&plus;bonus_payment
-           deduction=#40;gross_salary*0.15#41;+#40;gross_salary*0.05#41;
+           deduction=#40;base_salary*0.15#41;+#40;gross_salary*0.05#41;
            net_salary=gross_salary - deduction];
     C -->D[/print net_salary/];
     D--> E([End]);
