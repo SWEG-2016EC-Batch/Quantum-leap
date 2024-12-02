@@ -24,20 +24,20 @@
 - **step 1**: start
 - **step 2**: check the while loop if:\
    2.1 true then go to step 3\
-   2.2 false then go to step 11
+   2.2 false then go to step 13
 - **step 3**: Read weight
 - **step 4**: Increment counter1 by 1
 - **step 5**: check if weight >=0\
            5.1 then go to step 6\
            5.2 else if counter1 =1 or counter2 =2 go to step 3
-           5.3 else goto end
+           5.3 else goto step 13
 
 - **step 6**: Read height
 - **step 7**: Increment counter by 1
 - **step 8**: check if height >0\
            8.1 then go to step 9\
            8.2 else if counter2 =1 or counter2 =2 go to step 6
-           8.3 else goto end
+           8.3 else goto step 13
 - **step9.**: Calculate yourBodyMassIndex as
 ```
 yourBodyMassIndex =  weight / height * height
