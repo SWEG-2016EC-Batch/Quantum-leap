@@ -22,25 +22,26 @@
 10. **End**
 
 ## Flowchart
-
-graph TD
 ```mermaid
-    A[Start] --> B[Display "This is a BMI test"]
-    B --> C[Input height in meters]
-    C --> D{Is height = 0?}
-    D -- Yes --> E[Display "Invalid input. Enter correct height"] --> C
-    D -- No --> F[Input weight in kilograms]
-    F --> G[Calculate BMI]
-    G --> H[Display BMI value]
-    H --> I{Is BMI > 25?}
-    I -- Yes --> J[Display "You are overweight"]
-    I -- No --> K{Is BMI between 18.5 and 25?}
-    K -- Yes --> L[Display "You have a normal weight"]
-    K -- No --> M[Display "You are underweight"]
-    J --> N[Ask user: "Calculate again?"]
-    L --> N
-    M --> N
-    N -- Yes --> C
-    N -- No --> O[End]
-```
-
+---
+config:
+  layout: TD
+  look: default
+  theme: neutral
+---
+graph TD;
+   A([ Start]) --> B[This is a BMI test];
+    B --> C[/Input Your Height in m/];
+    C --> D[/Input Your Weight in kg/];
+    D --> E[BMI = weight / height*height];
+    E --> F[/Display BMI/];
+    F --> G{Determine BMI category};
+    G --> H[/Overweight BMI<=18.5/];
+    G --> I[/Underweight BMI > 25/];
+    G --> K[/normal weight BMI>18.5 and BMI <= 25/]
+    I --> Z{Do you want to continue?};
+    H --> Z{Do you want to continue?};
+    K --> Z{Do you want to continue?};
+    Z --> |"y"|B;
+    Z --> |"No"|J([Terminate]);
+    
