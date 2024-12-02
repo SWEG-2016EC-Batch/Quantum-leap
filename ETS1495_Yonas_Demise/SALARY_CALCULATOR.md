@@ -26,7 +26,7 @@
 + *step 5*: calculate total deductions of pension(5%) and tax(15%)  as,
   
   ```
-  deduction= ((base_salary*0.5) + (gross_salary*0.15)
+  deduction= ((base_salary*0.5) + (gross_salary*0.15))
   ```
   
 + *step 6*: calculate net salary as,
