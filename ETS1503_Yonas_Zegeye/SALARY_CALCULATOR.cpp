@@ -64,8 +64,8 @@ int main(){
         
     }
        bonuspayment = bonusRatePerHour * baseSalary;
-       paymentDeductions = 0.05 * 0.15 * baseSalary; // pension rate – 5%,tax - 15%. 
        grossSalary = baseSalary + bonuspayment;
+       paymentDeductions = 0.05 * baseSalary + grossSalary * 0.15; // pension rate – 5%,tax - 15%. 
        netSalary = grossSalary - paymentDeductions;
        cout<<"Name : "<<nameOfEmployee<<"\nNet Salary : "<<netSalary<<"\nGross salary : "<<grossSalary<<"\nBonus payment : "<<bonuspayment<<endl;
        cout<<"Do you want to continue ?"<<endl;
