@@ -63,14 +63,15 @@ int main(){
     first_last_sum = first + last;
     
     //swap first and last
+    last1 = last;
     counter = number_of_digits;
     
     while (temp5 > 0){
         if (counter == number_of_digits){;
             for (int i = 0; i < counter-1; i++){
-                last *= 10;
+                last1 *= 10;
             }
-            swapped += last;
+            swapped += last1;
             temp5 /= 10;
             counter--;
             count = number_of_digits - counter;
