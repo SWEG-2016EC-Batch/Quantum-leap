@@ -40,7 +40,7 @@
                 4.1.4. outside of the j-loop but inside i-loop print new line\
       4.2. If the user presses 2, create square pattern with upper case alphabets as,\
                 4.2.1. using for loop initialize i to zero and the condition will be i<row\
-                4.2.2. using another for loop initialize j to zero and its condition will be j<colum \
+                4.2.2. using another for loop initialize j to zero and its condition will be j<column \
                 4.2.3. inside the j-loop print alpha\
                 4.2.4. increment alpha as alpha++\
                 4.2.5. if alpha >'Z', stop the program\
@@ -57,7 +57,7 @@
                4.4.4. inside the k-loop print empty space \
                4.4.5. outside of k-loop using another for loop initialize j to i and its condition will be j>1\
                4.4.6. inside j-loop print j\
-               4.4.7. outside of j-loop and k-loop but inside i-loop print new line\
+               4.4.7. outside of j-loop decrement counter and outside of other loops but inside i-loop print new line\
      4.5. If the user presses 5, create right-aligned right-angled triangle with alphabet as,\
                4.5.1. using for loop initialize i to zero and the condition will be i<row\
                4.5.2. initilize alph as aplph='A'\
