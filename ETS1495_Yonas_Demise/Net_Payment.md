@@ -3,8 +3,8 @@
 **Output** - net salary\
 **Operation** - \
             - read the inputs\
-            - calculate the bonus payment\ 
-            - calcualate the gross salary
+            - calculate the bonus payment\
+            - calcualate the gross salary\
             - Calculate total deductions\
             - calculate net salary\
             - print net salary
