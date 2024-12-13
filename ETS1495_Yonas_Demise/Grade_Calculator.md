@@ -11,9 +11,9 @@
 + Step 1: Start
 + Step 2: Read Inputs
 + Step 3: Calculate total mark as,\
-       ```
-      total_mark = test + quiz + project + assignment + final_exam;
-      ```
+   ```
+    total_mark = test + quiz + project + assignment + final_exam;
+   ```
 + Step 4: Determine Grade as,\
      4.1. if total_mark >=90 , grade== A+\
      4.2. if total_mark >=80 && total_mark < 90 , grade== A\
