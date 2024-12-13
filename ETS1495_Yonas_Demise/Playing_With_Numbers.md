@@ -39,7 +39,7 @@
       4.3. If the user presses 3, calculate the product of even digits as,\
                 - 4.3.1. store the num on the temp variable as temp=num\
                 - 4.3.2. calculate the reminder as reminder= num%10\
-                - 4.3.3. if reminder%2 ==0, find product as product*=reminder\
+                - 4.3.3. if reminder%2 ==0, find product as product\*=reminder\
                 - 4.3.4. decrement num as num/=10\
                 - 4.3.5. if num >0, go to step 4.3.2\
       4.4. If the user presses 4, find the sum of the first and last digits as,\
@@ -56,15 +56,15 @@
                - 4.5.1. calculate last digit as, last_digit= num%10\
                - 4.5.2. store the number on the temp variable as temp=num\
                - 4.5.3. decrement temp as temp/=10\
-               - 4.5.4. calculate divisor as divisor*=10\
+               - 4.5.4. calculate divisor as divisor\*=10\
                - 4.5.5. if temp>=10, go to step 4.5.2\
                - 4.5.6. calculate the first digit as, first_digit=temp\
-               - 4.5.7. calculate swapped number as, swapped_num= lasr_digit*divisor + (num%divisor)/10 * 10 + first_digit\
+               - 4.5.7. calculate swapped number as, swapped_num= lasr_digit\*divisor + (num%divisor)/10 \* 10 + first_digit\
                - 4.5.8. print swapped_num\
      4.6.  If the user presses 6, check if the number is palindrome or not as,\
                - 4.6.1. store the number on the temp variable as, temp=num\
                - 4.6.2. calculate digit as digit=num%10\
-               - 4.6.3. calculate counter as counter= ((counter*10) + digit)\
+               - 4.6.3. calculate counter as counter= ((counter\*10) + digit)\
                - 4.6.4. decrement num as num/=10\
                - 4.6.5. if num!=0, go to step 4.6.2\
                - 4.6.6. if counter==temp, print the number as "palindrome"\
@@ -80,7 +80,7 @@
               - 4.8.2. initialize factorial to 1 as factorial=1\
               - 4.8.3. calculate reminder as reminder=num%10\
               - 4.8.4. initial i as i=1\
-              - 4.8.5. calculate factorial as factorial*=1\
+              - 4.8.5. calculate factorial as factorial\*=1\
               - 4.8.6. increment i as i++, if i<=reminder go to step 4.8.5\
               - 4.8.7. calculate sum as, sum+=factorial\
               - 4.8.8. decrement num as num/=10\
