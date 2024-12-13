@@ -1,7 +1,8 @@
 # Problem Analysis
 + **Input** - test,quiz,project,assignment,final exam
 + **Output** - Grade
-+ **Operation** - read the inputs\
++ **Operation** - 
+                - read the inputs\
                 - calculate total mark \
                 - calculate Grade\
                 - print Grade
@@ -9,11 +10,11 @@
 ## Pseudocode
 + Step 1: Start
 + Step 2: Read Inputs
-+ Step 3: Calculate total mark as,
++ Step 3: Calculate total mark as,\
        ```
       total_mark = test + quiz + project + assignment + final_exam;
       ```
-+ Step 4: Determine Grade as,
++ Step 4: Determine Grade as,\
      4.1. if total_mark >=90 , grade== A+\
      4.2. if total_mark >=80 && total_mark < 90 , grade== A\
      4.3. if total_mark >=75 && total_mark < 80 , grade== B+\
