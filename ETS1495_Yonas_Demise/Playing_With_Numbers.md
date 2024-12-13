@@ -1,5 +1,5 @@
 # Problem Analysis
-**Input** - number
+**Input** - number\
 **Output** - \
     - reverse of the number\
     - the number of the digits\
