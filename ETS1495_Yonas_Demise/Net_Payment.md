@@ -2,12 +2,12 @@
 **Input** - base salary, bonus rate, working hours,extra work hours\
 **Output** - net salary\
 **Operation** - \
-          - read the inputs\
-          - calculate the bonus payment \ 
-          - calcualate the gross salary\
-          - Calculate total deductions\
-          - calculate net salary\
-          - print net salary
+            - read the inputs\
+            - calculate the bonus payment\ 
+            - calcualate the gross salary
+            - Calculate total deductions\
+            - calculate net salary\
+            - print net salary
 # Algorith Design
 ## Pseudocode
 + Step 1: Start
