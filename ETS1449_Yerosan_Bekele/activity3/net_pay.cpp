@@ -41,8 +41,16 @@ int main() {
 
     //assuming all the inputs are valid
     if (worked_hours > 40) {
+        line44:
         cout << "Enter your overtime bonus rate per hour (in percentage): ";
         cin >> overtime_bonus_rate;
+
+        if (cin.fail() || overtime_bonus_rate < 0 || overtime_bonus_rate > 100){
+            cout << "Please enter a valid input!\n";
+            cin.clear();
+            cin.ignore();
+            goto line44;
+        }
         overtime_bonus_rate /= 100;
         overtime_bonus_amount = overtime_bonus_rate * basic_salary;
     }
