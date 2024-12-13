@@ -27,7 +27,7 @@
      6.1. if base_salary < 200, tax==0\
      6.2. if base_salary >=200 && base_salary < 600,  tax= gross_salary\*0.1\
      6.3. if base_salary >=600 && base_salary < 1200,  tax= gross_salary\*0.15\
-     6.4. if base_salary >=1200 && base_salary < 2000,  tax= gross_salary*\0.2\
+     6.4. if base_salary >=1200 && base_salary < 2000,  tax= gross_salary\*0.2\
      6.5. if base_salary >=2000 && base_salary < 3500,  tax= gross_salary\*0.25\
      6.6. if base_salary >=3500,  tax= gross_salary*0.3
 + Step 7: Calculate total deductions as,
