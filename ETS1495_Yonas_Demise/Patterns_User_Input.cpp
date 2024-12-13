@@ -4,6 +4,7 @@ int main() {
     int row,column;
     char alpha='A',alph;
     int menu;
+    label:
    cout<<"*****MENU*****"<<endl;
    cout<<"Press 1 to create square pattern with numbers"<<endl;
    cout<<"Press 2 to create square pattern with upper case alphabets"<<endl;
@@ -195,6 +196,9 @@ int main() {
     case 0:
     cout<<"The Program is Terminated. Have a Nice Day!"<<endl;
     return 0;
+    default :
+   cout<<"Incorrect Input!, Please Enter Again."<<endl;
+   goto label;
    }
    return 0;
 }
