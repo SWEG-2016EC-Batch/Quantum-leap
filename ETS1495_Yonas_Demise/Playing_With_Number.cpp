@@ -139,10 +139,10 @@ int main() {
     cin>>num;
     while(count<=num) {
        divisor=num%count;
-       count++;
-       if(divisor==0) {
+       if(count==0) {
         sum+=divisor;
        }
+        count++;
     }
     difference=sum-num;
     if(difference==num) {
