@@ -27,10 +27,10 @@
 + Step 3: Read the user's choice
 + Step 4: Perforn operation as,\
       4.1. If the user presses 1, find the reverse of the number as,\
-                4.1.1. find the reminder as reminder=num%10\
-                4.1.2. print the reminder\
-                4.1.3. decrement num as num/10\
-                4.1.4. if num >0, go to step 4.1.2\
+                - 4.1.1. find the reminder as reminder=num%10\
+                - 4.1.2. print the reminder\
+                - 4.1.3. decrement num as num/10\
+                - 4.1.4. if num >0, go to step 4.1.2\
       4.2. If the user presses 2, count the number of the digits as,\
                 4.2.1. store the number on the temp variable as, temp=num\
                 4.2.2. decrement num as num/=10\
