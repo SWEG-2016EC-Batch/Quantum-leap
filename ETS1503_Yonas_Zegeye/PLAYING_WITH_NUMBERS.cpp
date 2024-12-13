@@ -125,8 +125,7 @@ int main(){
                           break;
                            
                     }
-                    case 5:{
-                            long long int swapInputNum,tempSwapNum,tempFirstDigit,tempLastDigit,remainder,firstDigit,lastDigit;
+                    case 5: {                           long long int swapInputNum,tempSwapNum,tempFirstDigit,tempLastDigit,remainder,firstDigit,lastDigit,middleDigits,digitsCounter=0,swappedNumber;
                         cout<<"enter the number you want to swap first and last digit: enter non-number character or a negative number to go back  to menu"<<endl;
                                cin>>swapInputNum;
                                if (cin.fail()||swapInputNum<0){
@@ -142,26 +141,24 @@ int main(){
 
                                    remainder = swapInputNum%10;
                                    swapInputNum = swapInputNum/10;
+                                   digitsCounter++;
                                }
                                    firstDigit = remainder;
                                    tempFirstDigit = firstDigit; // to keep originality of the first number for later output.
+                                   middleDigits = (tempSwapNum % (int)pow(10, digitsCounter - 1)) / 10;// Extract middle part
+                                   swappedNumber = lastDigit * pow(10, digitsCounter - 1) + middleDigits * 10 + firstDigit;  // Reconstruct the number with swapped digits.
                                    //Swapping of the numbers
-                                   lastDigit = firstDigit;
-                                   firstDigit = tempLastDigit;
-                                   if (tempSwapNum >= 0 && tempSwapNum < 10){
-
-                                       cout<<"The first digit is : "<<lastDigit<<endl;
-                                       cout<<"The  last digit is : "<<lastDigit<<endl;
+                                   if(tempSwapNum >= 0 && tempSwapNum < 10){
+                                       cout<<"The number has only one digit! "<<endl;
                                    }
                                    else{
-                                        cout<<"Entered Number : "<<tempSwapNum<<" \n The  first digit is : "<<tempFirstDigit<<" \n The last digit is : "<<tempLastDigit<<" \nAFTER SWAPPING THE TWO:\n";
-                                        cout<<"\nThe first digit is : "<<firstDigit<<endl;
-                                        cout<<"The  last digit is : "<<lastDigit<<endl;
+                                        cout<<"Entered Number : "<<tempSwapNum<<"After Swapping the first and the last digit the number will be : ";
+                                        cout<<swappedNumber<<endl;
                                    }
-                                        sleep(7);
+                                        sleep(5);
                                         break;
-                         
-                     }
+                            }
+                  
                      case 6:{
                          int reverseOfInputNum = 0,palindromeInputNum,tempPalindromeInputNUm,remainderForPalindrome;
                          cout<<"enter the number you want to find palindrome: enter non-number character to go back to menu"<<endl;
