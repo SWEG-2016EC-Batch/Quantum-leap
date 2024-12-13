@@ -75,39 +75,39 @@
      4.7.  If the user presses 7, create hollow square as,\
               - 4.7.1. using for loop initialize i to one and the condition will be i<=7\
               - 4.7.2. using another for loop initialize j to one and the condition will be j<=8\
-              - 4.7.3. if i==1 or i==7 or j==1 or j==8, print star(*)\
+              - 4.7.3. if i==1 or i==7 or j==1 or j==8, print star(\*)\
               - 4.7.4. else print empty space\
               - 4.7.5. outside of j-loop but inside i-loop print new line\
      4.8. If the user presses 8, create inverted half pyramid as,\
               - 4.8.1. using for loop initialize i to zero and the condition will be i<5\
               - 4.8.2. using another for loop initialize j to 5 and the condition will be j>i\
-              - 4.8.3. inside j-loop print star(*)\
+              - 4.8.3. inside j-loop print star(\*)\
               - 4.8.4. outside of j-loop but inside i-loop print new line\
      4.9. If the user presses 9, create hollow inverted half-pyramid as,\
               - 4.9.1. using for loop initialize i to 5 and the condition will be i>=1\
               - 4.9.2. using another for loop initialize j to one and the condition will be j<=i\
-              - 4.9.3. if i==5 or j==1 or j==i , print star(*)\
+              - 4.9.3. if i==5 or j==1 or j==i , print star\(*)\
               - 4.9.4. else print empty space\
               - 4.9.5. outside of j-loop but inside i-loop print new line\
     4.10. If the user presses 10, create full pyramid as, \
               - 4.10.1. using for loop initialize i to one and the condition will be i<=6\
               - 4.10.2. using another for loop initialize j to one and the condition will be j<=6-i\
               - 4.10.3. inside the j-loop print empty space and close the loop\
-              - 4.10.4. using another for loop initialize k to one and the condition will be k<=i*2-1\
-              - 4.10.5. inside k-loop print star(*) and close the loop\
+              - 4.10.4. using another for loop initialize k to one and the condition will be k<=i\*2-1\
+              - 4.10.5. inside k-loop print star(\*) and close the loop\
               - 4.10.6. inside i-loop print new line\
   4.11. If the user presses 10, create inverted full pyramid as, \
               - 4.11.1. using for loop initialize i to 6 and the condition will be i>=1\
               - 4.11.2. using another for loop initialize j to one and the condition will be j<=6-i\
               - 4.11.3. inside the j-loop print empty space and close the loop\
-              - 4.11.4. using another for loop initialize k as k=i*2-1 and the condition will be k>=1\
-              - 4.11.5. inside k-loop print star(*) and close the loop\
+              - 4.11.4. using another for loop initialize k as k=i\*2-1 and the condition will be k>=1\
+              - 4.11.5. inside k-loop print star(\*) and close the loop\
               - 4.11.6. inside i-loop print new line\
    4.12. If the user presses 10, create hollow full pyramid  as, \
               - 4.12.1. using for loop initialize i to one and the condition will be i<=6\
               - 4.12.2. using another for loop initialize j to one and the condition will be j<=6-i\
-              - 4.12.3. using another for loop initialize k to one and the condition will be k<=i*2-1\
-              - 4.12.4. if i==6 or k==1 or k==i*2-1, print star(*)\
+              - 4.12.3. using another for loop initialize k to one and the condition will be k<=i\*2-1\
+              - 4.12.4. if i==6 or k==1 or k==i\*2-1, print star(\*)\
               - 4.12.5. else print empty space and close the loop\
               - 4.12.6. inside i-loop print new line\
   4.13. If the user presses 0, terminate the program
