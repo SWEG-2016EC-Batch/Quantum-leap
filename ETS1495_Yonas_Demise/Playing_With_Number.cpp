@@ -4,6 +4,7 @@ int main() {
     int num,reminder,temp,counter=0,product=1,sum=0,divisor=1,digit,difference,count=1;
     int frequency[10]={0}; // this is for case 7 to store the frequencies
    int menu;
+    label:
    cout<<"*****MENU*****"<<endl;
    cout<<"Press 1 to find the reverse of a number"<<endl;
    cout<<"Press 2 to count the number of digits in a given number"<<endl;
@@ -154,6 +155,9 @@ int main() {
     case 0:
     cout<<"The Program is Terminated. Have a Nice Day!"<<endl;
     return 0;
+    default :
+   cout<<"Incorrect Input!, Please Enter Again."<<endl;
+   goto label;
    }
    return 0;
 }
