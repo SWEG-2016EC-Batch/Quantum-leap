@@ -8,6 +8,7 @@ int main() {
         int userMainMenuChoice, userMenuChoice;
         // Main Menu
         firstLabel:
+        cout<<"************MENU************"<<endl;
         cout << "\nEnter your choice to print a pattern listed here:" << endl;
         cout << "\nPress 0. To exit\n1. Number Rectangle\n2. Alphabet Rectangle\n3. Number Triangle\n4. Descending Number Pyramid" << endl;
         cout << "5. Alphabet Triangle\n6. Small Letter Alphabet Rectangle\n7. Hollow Rectangle\n8. Inverted Half Pyramid" << endl;
