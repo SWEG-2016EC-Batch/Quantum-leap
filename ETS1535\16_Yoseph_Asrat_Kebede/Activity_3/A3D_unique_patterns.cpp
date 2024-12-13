@@ -174,11 +174,11 @@ int main() {
             break;
         }
     } else {
-        cout<<"-------- Let's get started --------"<<endl;;
+        cout<<"-------- Let's get started --------\nRemember the patterns you can create are limited by their type and size, especially those that involve numbers. "<<endl;;
         int height, width;
         cout<<"What should be the height of your pattern ";
         cin>>height;
-        if (option == 1 || option == 2 || option == 7) {
+        if (option == 1 || option == 2 || option == 7 || option == 6) {
             cout<<"What should be the width of your pattern ";
             cin>>width;
         }
@@ -216,7 +216,7 @@ int main() {
         //patern 4
             case 4:
             for (int j = 0; j < height; j++){
-                for (int i = 1; i < 5-j; i++) {
+                for (int i = 1; i < height-j; i++) {
                     cout << "  ";
                 }
                 for (int k = j; k >= 0; k--) {
@@ -239,7 +239,7 @@ int main() {
         //patern 6
             case 6:
             for (int i = 0; i < height; i++) {
-                for (int k = 0; k < 5; k++) {
+                for (int k = 0; k < width; k++) {
                     cout << char(97+k)<<" ";
                 }
                 cout << endl;
@@ -263,7 +263,7 @@ int main() {
         //patern 8
             case 8:
             for (int j = 0; j< height; j++){
-                for (int i = 0; i< 6-j; i++) {
+                for (int i = 0; i< height-j; i++) {
                     cout<<"*"<<" ";
                 }
                 cout<<endl;
@@ -272,9 +272,9 @@ int main() {
             break;
         //patern 9
             case 9:
-            for (int j = 0; j< height; j++){
-                for (int i = 0; i< 6-j; i++) {
-                    if (((i == 0) || (j == 0)) || (i == 5-j)) {
+            for (int j = 0; j< height+1; j++){
+                for (int i = 0; i< height+1-j; i++) {
+                    if (((i == 0) || (j == 0)) || (i == height-j)) {
                         cout<<"*"<<" ";
                     } else {
                         cout<<"  ";
@@ -287,7 +287,7 @@ int main() {
         //patern 10 
             case 10:
             for (int j = 0; j < height; j++){
-                for (int i = 0; i < 5-j; i++) {
+                for (int i = 0; i < height-j; i++) {
                     cout << " ";
                 }
                 for (int k = 0; k <= j; k++) {
@@ -303,7 +303,7 @@ int main() {
                 for (int k = 1; k <= j; k++) {
                     cout<<" ";
                 }
-                for (int i = 0; i < 6-j; i++) {
+                for (int i = 0; i < height-j; i++) {
                     cout<<"*"<<" ";
                 }
                 cout << endl;
