@@ -110,7 +110,7 @@
               4.9.4. if i==row or k==1 or k==i*2-1, print star(*)\
               4.9.5. else print empty space and close the loop\
               4.9.6. inside i-loop print new line\
-  4.13. If the user presses 0, terminate the program\
+  4.13. If the user presses 0, terminate the program
 + Step 5: stop 
 
 
