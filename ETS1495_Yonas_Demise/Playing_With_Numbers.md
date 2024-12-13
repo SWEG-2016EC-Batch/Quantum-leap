@@ -95,7 +95,7 @@
               - 4.9.5. calculate difference as difference=sum-num\
               - 4.9.6. if difference==num, print the number as "Perfect"\
               - 4.9.7. if difference!=num, print the number as "Not perfect"\
-    4.10. If the user presses 0, terminate the program\
+    4.10. If the user presses 0, terminate the program
 + Step 5: stop 
            
      
