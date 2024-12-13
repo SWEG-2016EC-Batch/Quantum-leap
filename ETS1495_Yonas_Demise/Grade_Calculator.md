@@ -1,7 +1,7 @@
 # Problem Analysis
 + **Input** - test,quiz,project,assignment,final exam
 + **Output** - Grade
-+ **Operation** - 
++ **Operation** - \
                 - read the inputs\
                 - calculate total mark \
                 - calculate Grade\
