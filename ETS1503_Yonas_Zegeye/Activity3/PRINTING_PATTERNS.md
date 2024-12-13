@@ -1,6 +1,7 @@
 # problem analysis
- **Input** - &nbsp;&nbsp; userMainchoice , userMenuChoice,rowLength,columnLength\ 
- **Output** - different types of pattern: Number Rectangle Alphabet Rectangle, Number Triangle, Descending Number Pyramid,Alphabet Triangle,Small Letter Alphabet Rectangle, Hollow Rectangle,Inverted Half Pyramid Hollow Inverted Half Pyramid,Full Pyramid, Inverted Full Pyramid and Hollow Pyramid. \ **Operation** : Declare a a variable userMainMenuChoice, userMenuChoice,rows,columnLength,columns,rowLength\
+ **Input** - &nbsp;&nbsp; userMainchoice , userMenuChoice,rowLength,columnLength
+ **Output** - different types of pattern: Number Rectangle Alphabet Rectangle, Number Triangle, Descending Number Pyramid,Alphabet Triangle,Small Letter Alphabet Rectangle, Hollow Rectangle,Inverted Half Pyramid Hollow Inverted Half Pyramid,Full Pyramid, Inverted Full Pyramid and Hollow Pyramid. \ 
+ **Operation** : Declare a a variable userMainMenuChoice, userMenuChoice,rows,columnLength,columns,rowLength\
  -check the While condition if true: - read userMainchoice, userMainMenuChoice and if the choice is not valid validate the userchoice. if userMainMenuChoice is = 1\
 Main Menu:
 
