@@ -34,124 +34,149 @@ int main() {
         if (customChoice != 0) {
             switch (userOption) {
                 case 1:
-                    for (int row = 0; row < 5; ++row) {
-                        for (int col = 0; col < 5; ++col) {
-                            cout << col + 1 << " ";
+                    for(int i=1; i<=5; i++){
+                        for(int j=1; j<=5; j++){
+                           cout <<j<<" ";
                         }
-                        cout << endl;
-                    }
+                        cout<<endl;
+                     }
                     break;
                 case 2:
-                    for (int row = 0; row < 4; ++row) {
-                        for (int col = 0; col < 6; ++col) {
-                            cout << char('A' + col + row * 6) << " ";
+                    char alph = 'A';
+                    for(int i=1; i<=4; i++){
+                       for( int j=1; j<=6; j++){
+                           cout<<alph<<" ";
+                           alph++;
                         }
-                        cout << endl;
-                    }
+                        cout<<endl;
+                    } 
                     break;
                 case 3:
-                    for (int row = 0; row < 5; ++row) {
-                        for (int col = 0; col <= row; ++col) {
-                            cout << col + 1 << " ";
-                        }
-                        cout << endl;
-                    }
+                     for(int i=1; i<=5; i++){
+                         for( int j=1; j<=i; j++){
+                             cout<<j<<" ";
+                          }
+                         cout<<endl;
+                      } 
                     break;
                 case 4:
-                    for (int row = 0; row < 5; ++row) {
-                        for (int space = 0; space < 4 - row; ++space) {
-                            cout << "  ";
-                        }
-                        for (int col = row; col >= 0; --col) {
-                            cout << col + 1 << " ";
-                        }
-                        cout << endl;
-                    }
+                    for(int i=1; i<=5; i++)
+                 {
+                    for(int j=1; j<=5-i; j++)         
+                        cout<<" ";
+                    for(int k=i; k>=1; k--)
+                      {
+                         cout<<k;
+                       }
+                         cout<<endl;         
+                  }
                     break;
                 case 5:
-                    for (int row = 0; row < 5; ++row) {
-                        for (int col = 0; col <= row; ++col) {
-                            cout << char('A' + col) << " ";
-                        }
-                        cout << endl;
-                    }
+                    for(int i=1; i<=5; i++)
+                {
+                  char alph = 'A';
+                  for( int j=1; j<=i; j++){
+                      cout<<alph<<" ";
+                      alph++;
+                     }       
+                      cout<<endl;
+                 } 
                     break;
                 case 6:
-                    for (int row = 0; row < 5; ++row) {
-                        for (int col = 0; col < 5; ++col) {
-                            cout << char('a' + col) << " ";
-                        }
-                        cout << endl;
-                    }
+                    for(int i=1; i<=5; i++)
+                {
+                  char alph = 'a';
+              for( int j=1; j<=5; j++){
+                   cout<<alph<<" ";
+                   alph++;
+                 }       
+                    cout<<endl;
+                 }
+             }
                     break;
                 case 7:
-                    for (int row = 0; row < 7; ++row) {
-                        for (int col = 0; col < 7; ++col) {
-                            if (row == 0 || row == 6 || col == 0 || col == 6) {
-                                cout << "* ";
-                            } else {
-                                cout << "  ";
-                            }
-                        }
-                        cout << endl;
-                    }
+                    for(int i=1; i<=8; i++)
+                 {
+                   for(int j=1; j<=8; j++)
+                     {
+                       if(i==1||i==8)
+                       cout<<'*';          
+                       else if(j==1||j==8)
+                       cout<<'*';  
+                       else if(j>1)
+                       cout<< " ";        
+                      }
+                       cout<<endl;
+                  } 
                     break;
                 case 8:
-                    for (int row = 0; row < 6; ++row) {
-                        for (int col = 0; col < 6 - row; ++col) {
-                            cout << "* ";
-                        }
-                        cout << endl;
-                    }
+                    for (int i=6; i>=1; i--)
+                 {
+                   for(int j=1; j<=i; j++)
+                     {
+                       cout<<'*';
+                      }
+                       cout<<endl;
+                  }
                     break;
                 case 9:
-                    for (int row = 0; row < 6; ++row) {
-                        for (int col = 0; col < 6 - row; ++col) {
-                            if (row == 0 || col == 0 || col == 5 - row) {
-                                cout << "* ";
-                            } else {
-                                cout << "  ";
-                            }
-                        }
-                        cout << endl;
-                    }
+                    for (int i=6; i>=1; i--)
+                 {
+                   for(int j=1; j<=i; j++)
+                     {
+                       if(i==1||i==6)
+                       cout<<'*';
+                       else if(j==1||j==i)
+                       cout<<'*';
+                       else if(j>1)
+                       cout<<" ";
+                      }
+                        cout<<endl;
+                  }
                     break;
                 case 10:
-                    for (int row = 0; row < 6; ++row) {
-                        for (int space = 0; space < 5 - row; ++space) {
-                            cout << " ";
-                        }
-                        for (int col = 0; col <= row; ++col) {
-                            cout << "* ";
-                        }
-                        cout << endl;
+                    for(int i=1; i<=6; i++)
+                {
+                 for(int j=6-i; j>=1; j--)
+                    cout<<" ";
+                 for(int k=1; k<=i; k++)
+                   {
+                     cout<<'*'<<" ";
                     }
+                     cout<<endl;
+                 }
                     break;
                 case 11:
-                    for (int row = 0; row < 6; ++row) {
-                        for (int space = 0; space < row; ++space) {
-                            cout << " ";
-                        }
-                        for (int col = 0; col < 6 - row; ++col) {
-                            cout << "* ";
-                        }
-                        cout << endl;
+                    for(int i=6; i>=1; i--)
+                {
+                 for(int j=6-i; j>=1; j--)
+                 cout<<" ";
+                 for(int k=1; k<=i; k++)
+                   {
+                    cout<<'*'<<" ";
                     }
+                    cout<<endl;
+                 }
                     break;
                 case 12:
-                    for (int row = 0; row < 6; ++row) {
-                        for (int space = 0; space < 5 - row; ++space) {
-                            cout << " ";
-                        }
-                        for (int col = 0; col <= row; ++col) {
-                            if (row == 5 || col == 0 || col == row) {
-                                cout << "* ";
-                            } else {
-                                cout << "  ";
-                            }
-                        }
-                        cout << endl;
-                    }
+                    for(int i=1; i<=6; i++)
+                {
+                  for(int j=6-i; j>0; j--)
+                   cout<<" ";
+                  for(int k=1; k<=i; k++)
+                    {
+                      if(i==1||i==6){
+                      cout<<"* ";
+                      }           
+                      else if(k==1||k==i){
+                       cout<<"* ";
+                      }
+                      else if(k>1){
+                       cout<<"  ";
+                      }
+                     }
+                    cout<<endl;    
+                 }
                     break;
             }
         } else {
