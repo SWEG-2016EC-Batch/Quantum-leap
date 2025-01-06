@@ -687,7 +687,7 @@ user_id[totalPatrons][0] = id;
                                 numBorrowings--;
                                 cout<<"The book has been returned successfully!"<<endl;
                                 for (int a = 0; a < numBorrowings; a++) {
-                                        if (borrowed_books[a] == 0) {
+                                        if (borrowed_books[a] != 0) {
                                             add = a;
                                             break;
                                         }
