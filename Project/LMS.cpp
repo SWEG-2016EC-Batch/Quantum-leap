@@ -84,16 +84,7 @@ int main() {
              }
 //---------------------end of yoseph's feature--------------------------
 //----------------------Yonas Z's feature:
-            cout << "Register yourself as the new Library Manager\n";
-            cout << "Enter your name: ";
-            cin.ignore();
-            getline(cin, name);
 
-            cout << "Enter your sex: ";
-            getline(cin, sex);
-
-            cout << "Enter your address: ";
-            getline(cin, address);
 //------------------------end of Yonas Z's feature and start of Yonas D's feature-------------------
  cout<<"Please Enter the Password: ";
             getline(cin, login_password);
