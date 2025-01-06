@@ -134,6 +134,30 @@ The system aims to:
 - Borrow books (up to the maximum limit).
 - Return books and check penalties for overdue returns.
 - View borrowing history and cancel membership if necessary.
+  # Contributions
+  ## Yafet Elias
+  - Allow the patron to login with either their name or Id, and retrives their information based on their credentials.
+  - Display a daily statistics for the Librarian to know what has been changed through the day and statistical information about the books borrowed and people registered.
+  ## Yerosand Bekele
+  -  Make sure the books borrowed was unique and made sure to link it with patron's information
+  -  If a book is returend past its due date make sure it is penalized with the set rate.
+  -  Cancel membership for any patron that wants stop using the library, if they have no debts.
+  ## Yeabsira Belete
+  - Check if the person has reached borrowing limit and set the limit
+  - History of the patron's transactions or borrowings
+  - Made the problem analysis as seen above
+  ## Yonas Demise
+  - Made the security system for both the Librarian and the patrons.
+  - Made the flowchart as seen below.
+  - Ensure the book limit was not passed
+  ## Yonas Zegeye
+  - Made the patron registeration system
+  - Daily report for the librarian
+  - Composed the Documentation for this Software
+  ## Yoseph Asrat
+  - Made the Librarian's enviroment with default passwords and settings
+  - Made the time registeration system so that the patron's time of borrowing is known and when he returns it.
+  - Composing and debugging the code.
 # Flowchart
 ```mermaid
 graph TD
