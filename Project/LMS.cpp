@@ -686,7 +686,6 @@ user_id[totalPatrons][0] = id;
                         for (int k = 0; k < MAX_BORROWINGS+1; k++) {
                             if(user_id[id][k] == idd) {
                                 user_id[id][k] = 0;
-                                user_id[id][1] = user_id[id][1] - 1;
                                 numBorrowings--;
                                 cout<<"The book has been returned successfully!"<<endl;
                                 for (int a = 0; a < numBorrowings; a++) {
@@ -699,6 +698,7 @@ user_id[totalPatrons][0] = id;
                                 break;
                             }
                         }
+                        user_id[id][1] = user_id[id][1] - 1;
 //Yeabsira's feature:
                         //History of borrowed books:
                         cout<<"Do you want to look at your borrowing history? press \'y\' for yes: ";
