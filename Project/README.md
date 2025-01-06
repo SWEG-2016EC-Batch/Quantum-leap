@@ -14,7 +14,7 @@ This is a folder that contains our code for the Library Management system.
       then  exit
       else go to menu  
 
-# **Yerosan's Penalty system Documentation**
+## **Yerosan's Penalty system Documentation**
 
 ## **Overview**  
 This section of the program calculates overdue penalties for borrowed books, displays the number of borrowed books, and informs patrons if their borrowing actions are overdue.
