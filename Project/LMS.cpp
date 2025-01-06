@@ -512,6 +512,76 @@ int main() {
             cout << "Enter your address: ";
             getline(cin, address);
 //end of Yonas Z feature.
+                        //------------------------Yonas D's feature--------------------------
+            cout<<"Please Enter the Password: ";
+            getline(cin, login_password);
+
+            
+            choiice:
+            cout << "Do you want to create a security question? press 0 if not press 1" << endl;
+            cin >> choice;
+            if (cin.fail() || (choice != 0 && choice != 1)) {
+                cin.clear();
+                cin.ignore();
+                errorCounter++;
+                if (errorCounter<maximumErrorAttempt) {
+                        cout << "Invalid input.\n";
+                        goto choiice;
+                }
+                else{
+                        cout << "Exiting the system. Goodbye!\n";
+                        return 0;
+                    }
+            }
+            if (choice == 0) {
+                cout << "*****SECURE*****" << endl;
+                cout << "Press 1 for the question \"What is your favorite color?\"" << endl;
+                cout << "Press 2 for the question \"What number did you like?\"" << endl;
+                cout << "Press 3 for the question \"What is the name of your favorite movie?\"" << endl;
+                cin >> secure;
+                errorCounter = 0;
+                if (cin.fail() || secure < 1 || secure > 3) {
+                    cin.clear();
+                    cin.ignore();
+                    errorCounter++;
+                    if (errorCounter<maximumErrorAttempt) {
+                            cout << "Invalid input.\n";
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                            goto choce;
+                    } else {
+                        cout << "Exiting the system. Goodbye!";
+                        return 0;
+                    }
+                }
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                switch(secure) {
+                    case 1:
+                    strcpy(security_question,"What is your favorite color?");
+                        cout << "What is your favorite color? ";
+                        cin.getline(security_answer, 50); 
+                        break;
+                    case 2:
+                    strcpy(security_question,"What number did you like?");
+                        cout << "What number did you like? ";
+                        cin.getline(security_answer, 50);
+                        break;
+                    case 3:
+                    strcpy(security_question,"What is the name of your favorite movie?");
+                        cout << "What is the name of your favorite movie? ";
+                        cin.getline(security_answer, 50);
+                        break;
+                }
+            }
+            //End of Yonas D's feature
+            user_id[totalPatrons][0] = id;
+            user_name[totalPatrons] = name;
+            user_sex[totalPatrons] = sex;
+            user_address[totalPatrons] = address;
+            totalPatrons++;
+
+            cout << "You have registered successfully with ID: " << id << " PLEASE SECURE YOUR ID IN A SAFE PLACE!\n";
+            goto menu;
+        }
 
 
 
