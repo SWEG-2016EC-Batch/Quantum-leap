@@ -89,7 +89,102 @@ int main() {
 
             cout << "Enter your address: ";
             getline(cin, address);
+//------------------------end of Yonas Z's feature and start of Yonas D's feature-------------------
+            cout<<"Please Enter the Password: ";
+            getline(cin, login_password);
 
+            
+            choice:
+            cout << "Do you want to create a security question? press 0 if not press 1" << endl;
+            cin >> choice;
+            if (cin.fail() || (choice != 0 && choice != 1)) {
+                cin.clear();
+                cin.ignore();
+                errorCounter++;
+                if (errorCounter<maximumErrorAttempt) {
+                        cout << "Invalid input.\n";
+                        goto choice;
+                }
+                else{
+                        cout << "Exiting the system. Goodbye!\n";
+                        return 0;
+                    }
+            }
+            if (choice == 0) {
+                choce:
+                cout << "*****SECURE*****" << endl;
+                cout << "Press 1 for the question \"What is your favorite color?\"" << endl;
+                cout << "Press 2 for the question \"What number did you like?\"" << endl;
+                cout << "Press 3 for the question \"What is the name of your favorite movie?\"" << endl;
+                cin >> secure;
+                errorCounter = 0;
+                if (cin.fail() || secure < 1 || secure > 3) {
+                    cin.clear();
+                    cin.ignore();
+                    errorCounter++;
+                    if (errorCounter<maximumErrorAttempt) {
+                            cout << "Invalid input.\n";
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                            goto choce;
+                    } else {
+                        cout << "Exiting the system. Goodbye!";
+                        return 0;
+                    }
+                }
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                switch(secure) {
+                    case 1:
+                    strcpy(security_question,"What is your favorite color?");
+                        cout << "What is your favorite color? ";
+                        cin.getline(security_answer, 50); 
+                        break;
+                    case 2:
+                    strcpy(security_question,"What number did you like?");
+                        cout << "What number did you like? ";
+                        cin.getline(security_answer, 50);
+                        break;
+                    case 3:
+                    strcpy(security_question,"What is the name of your favorite movie?");
+                        cout << "What is the name of your favorite movie? ";
+                        cin.getline(security_answer, 50);
+                        break;
+                }
+            }
+
+        }
+    //---------------------end of Yonas D's feature--------------------------
+        else if (choice == 1) {
+//Yonas D's feature:
+//----------------------------------------Librarian login-------------------------------------------------------------:
+            while (true) {
+                    cout << "Please Enter the Password:" << endl;
+                    getline(cin, log_pswd);
+
+                    if (log_pswd != login_password) {
+                        attempts--;
+                        if (attempts == 0) {
+                            cout << "Incorrect Password!" << endl;
+                            cout << "You have run out of attempts. Try to answer the security question to login." << endl;
+                            cout << security_question << endl;
+
+                            cin.getline(security_answer, 50);
+                            if (strcmp(security_answer, security_answer) == 0) {
+                                cout << "Security question answered correctly. Login successful!" << endl;
+                                break;
+                            } else {
+                                cout << "Incorrect answer. Access Denied!" << endl;
+                                return 0;
+                            }
+                        } else {
+                            cout << "Incorrect Password! You have " << attempts << " attempts left." << endl;
+                        }
+                    } else {
+                        cout << "Login successful!" << endl;
+                        break;
+                    }
+                }
+                cout<<"---------You have successfully logged in!--------------"<<endl;
+//----------------End of Yonas D's feature Start of Yoseph's features---------------------
 
 
 
