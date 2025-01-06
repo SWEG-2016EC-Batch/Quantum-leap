@@ -279,7 +279,7 @@ int main() {
 
 
 
-                    //-------------------Start of Yafet's feature------------------------
+                    //-------------------The start of Yafet's feature------------------------
                         cout << "5. Display Daily Borrowing Statistics\n";
     // calculate daily statistics
                         // count unique borrowers
