@@ -1005,6 +1005,42 @@ int main() {
                 }
         }
         else if (choice == 4) {
+//Start of Yerosan's feature's:---------------------------
+            while (true){
+                bool patronFound;
+                int patronId;
+                cout << "Enter patron ID: ";
+                cin >> patronId;
+                patronFound = false;
+                for (int i = 0; i < totalPatrons; i++){
+                    if (user_id[i][0] == 0){
+                        break;
+                    }
+                    if (patronId == user_id[i][0]){
+                        patronFound = true;
+                        if (user_id[i][1] != 0) {
+                            cout << "Denied!\nReason: Unreturned book\n";
+                            break;
+                        }
+                        else {
+                            char patronSure;
+                            cout << "\nAre you sure you to cancel membership? (y for yes): ";
+                            cin >> patronSure;
+                            if (patronSure == 'y'){
+                                user_id[i][0] = 0;
+                                cout << "Membership cancelled successfully!\n\n";
+                            } 
+                        }
+                    }
+                }
+                if (!patronFound){
+                    cout << "Invalid patron ID!\n";
+                    break;
+                }
+            }
+            goto menu;
+        }
+//End of Yerosan's features------------------------------------------
 
 
 
