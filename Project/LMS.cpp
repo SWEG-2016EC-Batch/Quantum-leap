@@ -17,14 +17,15 @@ int main() {
     string user_name[MAX_PATRONS], name, sex, address, searchName; // first column of user name has the patron names, and the rest are the books they borrowed based on id.
     string user_sex[MAX_PATRONS]; 
     string user_address[MAX_PATRONS], login_password, log_pswd;
-    string book, booksId[MAX_BOOKS][2] = {}, borrowed_books[MAX_BOOKS][2]; // Array of books by name and id.
+    string book; 
     int totalPatrons = 0,errorCounter=0, maximumErrorAttempt=3;        // Count of registered patrons
     // arrays to store borrowing records for the day
     int numBorrowings = 0;  // number of borrowings for the day
     char security_answer[50], security_question[50], attempts = 3;
     int secure, choose, searchId, id, dueDate = 10, total_penalty = 0, penalty_rate = 10,consumerCount = 0,bookId, add, idd, borrow_count = 0;
-    int uniqueBorrowers = 0;
+    int uniqueBorrowers = 0, booksId[MAX_BOOKS] = {}, borrowed_books[MAX_BOOKS];
     long actionTime[MAX_PATRONS][3] = {};
+    bool bookFound = false;
     double secondsDifference, daysDifference;
     int choice;
     while (true) {
@@ -211,10 +212,7 @@ int main() {
                     case 2:
                         cout<<"Enter the name of the book you want to add: ";
                         cin>>book;
-                        cout<<"Enter the ID of the book you want to add: ";
-                        cin>>bookId;
-                        booksId[numBooks][0] = bookId;
-                        booksId[numBooks][1] = book;
+                        booksId[numBooks] = bookId;
                         numBooks++;
                         cout<<"The book has been added successfully!";
                         cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -224,9 +222,8 @@ int main() {
                         cout<<"Enter the ID of the book you want to delete: ";
                         cin>>bookId;
                         for (int i = 0; i < numBooks; i++) {
-                            if (stoi(booksId[i][0]) == bookId) {
-                                booksId[i][0] = " ";
-                                booksId[i][1] = " ";
+                            if (booksId[i] == bookId) {
+                                booksId[i] = 0;
                                 numBooks--;
                                 numBorrowings--;
                                 cout<<"The book has been deleted successfully!";
@@ -598,102 +595,39 @@ user_id[totalPatrons][0] = id;
                                 }
                             //End of Yeabsira's feature
                             cout<<"You can borrow "<<MAX_BORROWINGS-user_id[id][1]<<" books."<<endl;
-                            cout<<"How would you like to borrow the book:"<<endl;
-                            cout<<"1. By name"<<endl;
-                            cout<<"2. By ID: "<<endl;
-                            cin>>choice;
-                            if (choice == 1) {
-                                //------Borrow a book by name:
+                        
                                     books:
                                     cout<<"The patron with the idnumber "<<user_id[id][0]<<" has "<<MAX_BORROWINGS-user_id[id][1]<<" books left to the borrow limit. \n";
-                                    cout << "Enter the name of book you want to borrow: ";
-                                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                                    getline(cin, book);
-                                    for (int h = 0; h < numBorrowings; h++) {
-                                        if (booksId[h][1] != book) {
-                                            cout<<"Sorry we currently don't have that book right now! ";
-                                            goto books;
-                                        }
-                                        if (borrowed_books[h][0] == book) {
-                                            cout<<"Sorry we currently don't have that book right now! ";
-                                            goto books;
-                                        }
-                                        if (stoi(borrowed_books[h][1])/1 == 0) {
-                                            add = h;
-                                            break;
-                                        }
-                                    }
-                                    
-
-                                    cout<<"Enter the id of the book: ";
-                                    cin>>idd;
-                                    for (int k = 0; k < MAX_BORROWINGS+1; k++) {
-                                        if(user_id[id][k]/1 == 0) {
-                                            user_id[id][k] = idd;
-                                            break;
-                                        }
-                                    }
-                                    borrowed_books[add][0] = book;
-                                    borrowed_books[add][1] = idd;
-                                    user_id[id][1]++;
-                                    numBorrowings++;
-//End of Yafet's feature and start of Yoseph's feature
-// Capture the current time
-                                    chrono::system_clock::time_point now = chrono::system_clock::now();
-                                    time_t currentTime = chrono::system_clock::to_time_t(now);
-
-                                    // Store the ID and the current time in the array
-                                    actionTime[id][0] = id;
-                                    actionTime[id][1] = currentTime;
-                                    if (!booksId[numBorrowings][0].empty()) {
-                                        actionTime[id][2] = stoi(booksId[numBorrowings][0]);
-                                    } else {
-                                        cout<<"Invalid input!";
-                                        goto menu;
-                                    }
-
-                                    // Display the stored information
-                                    cout << "Patron ID: " << actionTime[id][0] 
-                                        << " borrowed at: " 
-                                        << ctime(reinterpret_cast<const time_t*>(&actionTime[consumerCount][1]));
-                                    
-                                    cout << "Borrowing recorded!\n";
-                                    cout << "You have borrowed " << user_id[id][1] << " books\n";
-                            } else if (choice == 2) {
-//End of Yoseph's feature and start of Yerosan's feature
-                                //------Borrow a book by ID:
-                                    bool bookFound;
-                                    bookFound = false;
 
                                     cout << "Enter the book's ID: ";
                                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
                                     cin >> bookId;
                                     for (int h = 0; h < numBorrowings; h++) {
-                                        if (stoi(booksId[h][0]) == bookId) {
+                                        if (booksId[h] == bookId) {
                                             cout<<"Sorry we currently don't have that book right now! ";
                                             goto books;
                                         }
-                                        if (stoi(borrowed_books[h][1]) == bookId) {
+                                        if (borrowed_books[h] == bookId) {
                                             cout<<"Sorry we currently don't have that book right now! ";
                                             goto books;
                                         }
-                                        if (stoi(borrowed_books[h][1])/1 == 0) {
+                                        if (borrowed_books[h] == 0) {
                                             add = h;
                                             break;
                                         }
                                     }
                                     for (int j = 0; j < 100; j++){
-                                        if (bookId == stoi(booksId[j][1])){
+                                        if (bookId == booksId[j]){
                                             bookFound = true;
                                             for (int k = 2; k < MAX_BORROWINGS+1; k++) {
-                                                if (user_id[id][k] == stoi(booksId[j][1])){
-                                                    cout << "The patron has already borrowed book ID: " << booksId[j][1] << "\n";
+                                                if (user_id[id][k] == booksId[j]){
+                                                    cout << "The patron has already borrowed book ID: " << booksId[j] << "\n";
                                                     break;
                                                 }    
                                             }
                                             for (int m = 0; m < MAX_BORROWINGS+1; m++) {
                                                 if(user_id[id][m]/1 == 0) {
-                                                    cout << "Book ID: " << booksId[j][1] << " borrowed successfully\nby patron ID: " << user_id[id][0] <<endl;
+                                                    cout << "Book ID: " << booksId[j] << " borrowed successfully\nby patron ID: " << user_id[id][0] <<endl;
                                                     break;
                                                 }
                                             }     
@@ -701,7 +635,7 @@ user_id[totalPatrons][0] = id;
                                         if (!bookFound){
                                             cout << "Invalid Book Id! \n";
                                         }
-                                        borrowed_books[add][1] = bookId;
+                                        borrowed_books[add] = bookId;
                                         user_id[id][1]++;
                                         numBorrowings++;
 //End of Yerosan's feature and start of Yoseph's feature
@@ -712,7 +646,7 @@ user_id[totalPatrons][0] = id;
                                         // Store the ID and the current time in the array
                                         actionTime[id][0] = id;
                                         actionTime[id][1] = currentTime;
-                                        actionTime[id][2] = stoi(booksId[numBorrowings][0]);
+                                        actionTime[id][2] = booksId[numBorrowings];
 
                                         // Display the stored information
                                         cout << "Patron ID: " << actionTime[id][0] 
@@ -723,9 +657,6 @@ user_id[totalPatrons][0] = id;
                                         break;
                                     }
                                     break;
-                            } else {
-                                goto menu;}
-                        break;
                     case 2:
 // Continutation of Yoseph's features: ---------------------------------
 //--------Return a book:
@@ -756,13 +687,12 @@ user_id[totalPatrons][0] = id;
                                 numBorrowings--;
                                 cout<<"The book has been returned successfully!"<<endl;
                                 for (int a = 0; a < numBorrowings; a++) {
-                                        if (borrowed_books[a][1] == "0") {
+                                        if (borrowed_books[a] == 0) {
                                             add = a;
                                             break;
                                         }
                                     }
-                                borrowed_books[add][1] = '0';
-                                borrowed_books[add][0] = ' ';
+                                borrowed_books[add] = 0;
                                 break;
                             }
                         }
