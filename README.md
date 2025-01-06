@@ -47,7 +47,14 @@ Quantum leap team repo
     K --> |option 5| O[calculate daily borrow statistics] 
     K --> |option 6| P[Search patron by Id] 
     K --> |option 7| Q[Display patron with overdue books] 
-    K --> |option 8| R[go to menu]  
+    K --> |option 8|  B[/Show Menu with options 
+            0. Resigster as the Librarian
+            1. Login Librarian
+            2. Register Patron 
+            3. Login Patron
+            4. Cancel Membership
+            5. Exit
+            /]  
     J --> |False| P[/Incorrect passwprd/]
     B --> |option 2| Q[/Register new patron
                         Ask their name
@@ -65,5 +72,12 @@ Quantum leap team repo
     R ---> |No| V[/patron not found/]
     B ---> |option 4| W[Remove patron Id and history]
     B ---> |option 5| X([End])
-    
+    H --> X([End])
+    Q --> X([End])
+    P --> X([End])
+    Q --> X([End])
+    T --> X([End])
+    U --> X([End])
+    V --> X([End])
+    W --> X([End])
     
