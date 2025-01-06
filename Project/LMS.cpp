@@ -836,6 +836,7 @@ user_id[totalPatrons][0] = id;
 //End of Yeabsira's feature
     return 0;
 }
+}
 
 
 
