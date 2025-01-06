@@ -587,6 +587,55 @@ int main() {
 
 
 
+//Yafet's feature 
+//Borrow a book:
+                    case 1:
+                            //Yeabsira's feature:
+                            if(user_id[id][1] > MAX_BORROWINGS){
+                                cout<<user_name[id]<<", you have reached borrow limit \n";
+                                cout<<"You need to return the books you have borrowed in order to borrow others."<<endl;
+                                break;
+                                }
+                            //End of Yeabsira's feature
+                            cout<<"You can borrow "<<MAX_BORROWINGS-user_id[id][1]<<" books."<<endl;
+                            cout<<"How would you like to borrow the book: ";
+                            cout<<"1. By name"<<endl;
+                            cout<<"2. By ID"<<endl;
+                            cin>>choice;
+                            if (choice == 1) {
+                                //------Borrow a book by name:
+                                    books:
+                                    cout<<"The patron with the idnumber "<<user_id[id][0]<<" has "<<MAX_BORROWINGS-user_id[id][1]<<" books left to the borrow limit. \n";
+                                    cout << "Enter the name of book you want to borrow: ";
+                                    getline(cin, book);
+                                    for (int h; h < numBorrowings; h++) {
+                                        if (booksId[h][1] != book) {
+                                            cout<<"Sorry we currently don't have that book right now! ";
+                                            goto books;
+                                        }
+                                        if (borrowed_books[h][0] == book) {
+                                            cout<<"Sorry we currently don't have that book right now! ";
+                                            goto books;
+                                        }
+                                        if (stoi(borrowed_books[h][1])/1 == 0) {
+                                            add = h;
+                                            break;
+                                        }
+                                    }
+                                    
+
+                                    cout<<"Enter the id of the book: ";
+                                    cin>>idd;
+                                    for (int k = 0; k < MAX_BORROWINGS+1; k++) {
+                                        if(user_id[id][k]/1 == 0) {
+                                            user_id[id][k] = idd;
+                                            break;
+                                        }
+                                    }
+                                    borrowed_books[add][0] = book;
+                                    borrowed_books[add][1] = idd;
+                                    user_id[id][1]++;
+                                    numBorrowings++;
 
 
 
