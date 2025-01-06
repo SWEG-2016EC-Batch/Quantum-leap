@@ -19,6 +19,11 @@ int main() {
     string user_address[MAX_PATRONS], login_password, log_pswd;
     string book; 
     int totalPatrons = 0,errorCounter=0, maximumErrorAttempt=3;        // Count of registered patrons
+    for (int i = 0; i < MAX_PATRONS; i++) {
+        for ( int j = 0; j < MAX_BORROWINGS+1; j++) {
+          user_id[i][j] = 0;          
+        }
+    }
     // arrays to store borrowing records for the day
     int numBorrowings = 0;  // number of borrowings for the day
     char security_answer[50], security_question[50], attempts = 3;
@@ -627,7 +632,7 @@ user_id[totalPatrons][0] = id;
                                                 if(user_id[id][m]/1 == 0) {
                                                     cout << "Book ID: " << booksId[j] << " borrowed successfully\nby patron ID: " << user_id[id][0] <<endl;
                                                     borrowed_books[add] = bookId;
-                                                    user_id[id][1]++;
+                                                    user_id[id][1] = user_id[id][1]+1;
                                                     numBorrowings++;
             //End of Yerosan's feature and start of Yoseph's feature
                                                     // Capture the current time
@@ -681,7 +686,7 @@ user_id[totalPatrons][0] = id;
                         for (int k = 0; k < MAX_BORROWINGS+1; k++) {
                             if(user_id[id][k] == idd) {
                                 user_id[id][k] = 0;
-                                user_id[id][1]--;
+                                user_id[id][1] = user_id[id][1] - 1;
                                 numBorrowings--;
                                 cout<<"The book has been returned successfully!"<<endl;
                                 for (int a = 0; a < numBorrowings; a++) {
@@ -732,7 +737,9 @@ user_id[totalPatrons][0] = id;
                             cin >> patronSure;
                             if (patronSure == 'y'){
                                 user_id[i][0] = 0;
+                                user_name[i] = "";
                                 cout << "Membership cancelled successfully!\n\n";
+                                goto menu;
                             } 
                         }
                     }
