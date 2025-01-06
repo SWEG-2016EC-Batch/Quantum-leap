@@ -39,27 +39,25 @@ int main() {
         cout << "5. Exit\n";
         cout << "Enter your choice: ";
         cin>>choice;
+        // Yonas Z's warning feature
 
+        if (cin.fail() || choice < 1 || choice > 5) {
+            cin.clear();
+            cin.ignore();
+            errorCounter++;
+            if (errorCounter<maximumErrorAttempt) {
+                    cout << "If you are not sure to about exiting.\n";
+                    goto menu;
+            }
+            else{
+                    cout << "Exiting the system. Goodbye!\n";
+                    return 0;
+                }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
 
         if (choice == 0) {
-//Register the Librarian
+//Login the Librarian
 //------------------------Yoseph's feature:
              while (true) {
                 cout << "Enter name: ";
@@ -238,6 +236,40 @@ int main() {
                             }
                         }
                     break;
+                    case 4:
+                        cout << "4. === Daily Report ==="<<endl;
+
+                        if (totalPatrons == 0) {
+                            cout << "No patrons registered today.\n";
+                        } else {
+                            
+
+                            for (int i = 0; i < totalPatrons; ++i) {
+                                cout << "ID: " << user_id[i][0] << "\n";
+                                cout << "Name: " << user_name[i] << "\n";
+                                cout << "Sex: " << user_sex[i] << "\n";
+                                cout << "Address: " << user_address[i] << "\n";
+                                for (int j = 2; j < MAX_BORROWINGS+1; j++) {
+                                    cout << "Books Borrowed with id: " << user_id[i][j] <<endl;
+                                    cout<< "At Time: " << ctime(reinterpret_cast<const time_t*>(&actionTime[i][1]));
+                                    borrow_count++;
+                                }
+                                cout<<"He has taken "<<user_id[i][1]<<" books"<<endl;
+                                cout<< "-------------------\n";
+                            }
+
+                            cout << "Total Borrowings Today: " << borrow_count << " books"<<endl;
+                            //Average number of books borrowed by patrons
+                            cout<<"The average number of books borrowed per patron is: "<<borrow_count/totalPatrons<<endl;
+                            for (int i = 0; i < totalPatrons; i++) {
+                        // check if the patron has reached the borrow limit
+                                if (user_id[i][1] > MAX_BORROWINGS) {
+                                    cout << "Patron ID: " << user_id[i][0] << " has reached the borrow limit of " << MAX_BORROWINGS << " books\n";
+                                }
+                            }
+                        }
+
+                    break;
 
 
 
@@ -397,10 +429,52 @@ int main() {
                     break;
                 }
 //---------------------End of Yoseph's feature---------------------------------
+                    
+                        // Yoans Z feature
+//---------------------------------Register patron-------------------------------------------------------------
+
             }
         }
+            
+                    else if (choice == 2) {
+            if (totalPatrons >= MAX_PATRONS) {
+                cout << "Maximum patron limit reached. Cannot register more patrons.\n";
+                continue;
+            }
+            if (totalPatrons == 0) {
+                srand(time(0)); // This initializes the first random number it is called seed.
+            }
+            int id;
+            bool unique;
+            do {
+                unique = true;
+                id = rand() % 100000000; // this generates a random 8-digit ID
+
+                // Check if ID is already assigned
+                for (int i = 0; i < totalPatrons; i++) {
+                    if (user_id[i][0] == id) {
+                        unique = false;
+                        break;
+                    }
+                }
+            } while (!unique);
 
 
+            cout << "Enter your name: ";
+            cin.ignore();
+            getline(cin, name);
+
+            cout << "Enter your sex: ";
+            getline(cin, sex);
+
+            cout << "Enter your address: ";
+            getline(cin, address);
+
+            cout<<"Please Enter the Password: ";
+            getline(cin, login_password);
+
+
+//end of Yonas Z feature.
 
 
 
