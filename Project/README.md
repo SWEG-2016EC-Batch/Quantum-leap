@@ -1,5 +1,4 @@
-# Yeabsira Belete Bafa 1429/16
-# Documentation for Enhanced Library Management System
+# Yeabsira Belete Bafa 1429/16 Documentation for Enhanced Library Management System
 
 ## Purpose
 This program is an advanced library management system designed to track patron borrowing activity with specific enhancements for managing borrow limits, due dates, and borrowing history.
