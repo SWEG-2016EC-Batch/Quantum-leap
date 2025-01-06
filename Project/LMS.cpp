@@ -561,41 +561,41 @@ int main() {
 
 
 
+//Yonas D's feature:
+               while (true) {
+                    cout << "Please Enter the Password:" << endl;
+                    getline(cin, log_pswd);
 
+                    if (log_pswd != login_password) {
+                        attempts--;
+                        if (attempts == 0) {
+                            cout << "Incorrect Password!" << endl;
+                            cout << "You have run out of attempts. Try to answer the security question to login." << endl;
+                            cout << security_question << endl;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            cin.getline(security_answer, 50);
+                            if (strcmp(security_answer, security_answer) == 0) {
+                                cout << "Security question answered correctly. Login successful!" << endl;
+                                break;
+                            } else {
+                                cout << "Incorrect answer. Access Denied!" << endl;
+                                return 0;
+                            }
+                        } else {
+                            cout << "Incorrect Password! You have " << attempts << " attempts left." << endl;
+                        }
+                    } else {
+                        cout << "Login successful!" << endl;
+                        break;
+                    }
+                }
+                //End of Yonas D's feature
+                cout<<"---------You have successfully logged in!--------------"<<endl;
+                cout<<"What would you like to do?"<<endl;
+                cout<<"1. Borrow a book"<<endl;
+                cout<<"2. Return a book"<<endl;
+                cin>>choose;
+                switch (choose) {
 //Yafet's feature 
 //Borrow a book:
                     case 1:
@@ -656,35 +656,7 @@ int main() {
 
 
 
-//Yonas D's feature:
-               while (true) {
-                    cout << "Please Enter the Password:" << endl;
-                    getline(cin, log_pswd);
 
-                    if (log_pswd != login_password) {
-                        attempts--;
-                        if (attempts == 0) {
-                            cout << "Incorrect Password!" << endl;
-                            cout << "You have run out of attempts. Try to answer the security question to login." << endl;
-                            cout << security_question << endl;
-
-                            cin.getline(security_answer, 50);
-                            if (strcmp(security_answer, security_answer) == 0) {
-                                cout << "Security question answered correctly. Login successful!" << endl;
-                                break;
-                            } else {
-                                cout << "Incorrect answer. Access Denied!" << endl;
-                                return 0;
-                            }
-                        } else {
-                            cout << "Incorrect Password! You have " << attempts << " attempts left." << endl;
-                        }
-                    } else {
-                        cout << "Login successful!" << endl;
-                        break;
-                    }
-                }
-                //End of Yonas D's feature
 
 
 
