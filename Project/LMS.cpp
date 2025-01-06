@@ -824,20 +824,19 @@ int main() {
                         time_t currentTime = chrono::system_clock::to_time_t(now);
                         secondsDifference = difftime(currentTime, actionTime[id][1]);
                         daysDifference = secondsDifference / (60 * 60 * 24); // Convert seconds to days
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        //Yerosan's feature
+                        cout << "ID: " << actionTime[id][0] << ", Days since action: " << daysDifference;
+                        total_penalty = 0;
+                        if (daysDifference > dueDate) {
+                            cout << " -> Action is more than 10 days old for book with id: "<<actionTime[id][2];
+                            total_penalty = (daysDifference-dueDate) * penalty_rate;
+                            cout << "Number of days overdue: " << daysDifference << "\n";
+                        } else {
+                            cout << " -> Action is within 10 days for all books.\n";
+                        }
+                            cout << "Penalty: " << total_penalty << "birr"<<endl;
+                        cout<<"You have borrowed "<<user_id[id][1]<<" books."<<endl;
+                        //End of Yerosan's feature
                         cout<<"Enter the id of the book you want to return: ";
                         cin>>idd;
                         for (int k = 0; k < MAX_BORROWINGS+1; k++) {
