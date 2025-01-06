@@ -917,18 +917,18 @@ int main() {
                                 break;
                             }
                         }
-
-
-
-
-
-
-
-
-
-
-
-
+//Yeabsira's feature:
+                        //History of borrowed books:
+                        cout<<"Do you want to look at your borrowing history? press \'y\' for yes: ";
+                        char history;
+                        cin>>history;
+                        if (history == 'y'){
+                            for (int j = 2; j < MAX_BORROWINGS+1; j++) {
+                                cout << "Books Borrowed with id: " << user_id[id][j] <<endl;
+                                cout << "You have borrowed a total of "<< user_id[id][1] << " books and you have " << MAX_BORROWINGS-user_id[id][1] << " books left to borrow."<<endl;
+                            }
+                        }
+                        //End of Yeabsira's feature
                         break;
 //End of Yoseph's features---------------------------------
                 }
