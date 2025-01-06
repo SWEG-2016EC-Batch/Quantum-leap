@@ -133,8 +133,8 @@ The system aims to:
 - Register/login as a patron.
 - Borrow books (up to the maximum limit).
 - Return books and check penalties for overdue returns.
-- View borrowing history and cancel membership if necessary.
-  # Contributions
+- View borrowing history and cancel membership if necessary.</hr>
+# Contributions
   ## Yafet Elias
   - Allow the patron to login with either their name or Id, and retrives their information based on their credentials.
   - Display a daily statistics for the Librarian to know what has been changed through the day and statistical information about the books borrowed and people registered.
