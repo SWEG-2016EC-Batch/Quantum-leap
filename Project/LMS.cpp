@@ -422,7 +422,7 @@ int main() {
             bool unique;
             do {
                 unique = true;
-                id = (totalPatrons + 1) * 1234567 % 100000000; // Generate an 8-digit ID using a mathematical formula
+                id = rand() % 100000000; // this generates a random 8-digit ID
 
                 // Check if ID is already assigned
                 for (int i = 0; i < totalPatrons; i++) {
