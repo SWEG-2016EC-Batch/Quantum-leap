@@ -720,9 +720,6 @@ user_id[totalPatrons][0] = id;
                 cin >> patronId;
                 patronFound = false;
                 for (int i = 0; i < totalPatrons; i++){
-                    if (user_id[i][0] == 0){
-                        break;
-                    }
                     if (patronId == user_id[i][0]){
                         patronFound = true;
                         if (user_id[i][1] != 0) {
