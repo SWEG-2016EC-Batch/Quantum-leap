@@ -367,21 +367,20 @@ int main() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    //Yerosan's feature:
+                            cout << "ID: " << actionTime[i][0]
+                                << ", Days since action: " << daysDifference;
+                            total_penalty = 0;
+                            if (daysDifference > dueDate) {
+                                cout << " -> Action is more than 10 days old.\n";
+                                total_penalty = (daysDifference-dueDate) * penalty_rate;
+                                cout << "Number of days overdue: " << daysDifference << "\n";
+                            } else {
+                                cout << " -> Action is within 10 days.\n";
+                            }
+                             cout << "Penalty: " << total_penalty << "birr"<<endl;
+                        }
+                    //End of Yerosan's feature
 
 
 
@@ -670,7 +669,7 @@ int main() {
 
 
 
-//End of Yoseph's feature and start of Yafet's feature
+//End of Yoseph's feature and start of Yerosan's feature
                                 //------Borrow a book by ID:
                                     bool bookFound;
                                     bookFound = false;
@@ -714,7 +713,7 @@ int main() {
                                         borrowed_books[add][1] = bookId;
                                         user_id[id][1]++;
                                         numBorrowings++;
-//End of Yafet's feature and start of Yoseph's feature
+//End of Yerosan's feature and start of Yoseph's feature
 
 
 
@@ -743,20 +742,20 @@ int main() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        //Yerosan's feature
+                        cout << "ID: " << actionTime[id][0]
+                            << ", Days since action: " << daysDifference;
+                        total_penalty = 0;
+                        if (daysDifference > dueDate) {
+                            cout << " -> Action is more than 10 days old for book with id: "<<actionTime[id][2];
+                            total_penalty = (daysDifference-dueDate) * penalty_rate;
+                            cout << "Number of days overdue: " << daysDifference << "\n";
+                        } else {
+                            cout << " -> Action is within 10 days for all books.\n";
+                        }
+                            cout << "Penalty: " << total_penalty << "birr"<<endl;
+                        cout<<"You have borrowed "<<user_id[id][1]<<" books."<<endl;
+                        //End of Yerosan's feautre
 
 
 
@@ -793,41 +792,42 @@ int main() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Start of Yerosan's feature's:---------------------------
+            while (true){
+                bool patronFound;
+                int patronId;
+                cout << "Enter patron ID: ";
+                cin >> patronId;
+                patronFound = false;
+                for (int i = 0; i < totalPatrons; i++){
+                    if (user_id[i][0] == 0){
+                        break;
+                    }
+                    if (patronId == user_id[i][0]){
+                        patronFound = true;
+                        if (user_id[i][1] != 0) {
+                            cout << "Denied!\nReason: Unreturned book\n";
+                            break;
+                        }
+                        else {
+                            char patronSure;
+                            cout << "\nAre you sure you to cancel membership? (y for yes): ";
+                            cin >> patronSure;
+                            if (patronSure == 'y'){
+                                user_id[i][0] = 0;
+                                cout << "Membership cancelled successfully!\n\n";
+                            } 
+                        }
+                    }
+                }
+                if (!patronFound){
+                    cout << "Invalid patron ID!\n";
+                    break;
+                }
+            }
+            goto menu;
+//End of Yerosan's features------------------------------------------
+        }
  // Yeabsira's feature
         else if (choice ==5) {
             cout << "----- Exiting the system. Goodbye! ------";
