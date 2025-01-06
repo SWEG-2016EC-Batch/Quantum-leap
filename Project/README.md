@@ -14,6 +14,59 @@ This is a folder that contains our code for the Library Management system.
       then  exit
       else go to menu  
 
+# **Yerosan's Penalty system Documentation**
+
+## **Overview**  
+This section of the program calculates overdue penalties for borrowed books, displays the number of borrowed books, and informs patrons if their borrowing actions are overdue.
+
+---
+
+## **How It Works**
+
+### 1. **Display Patron Information**
+- The program displays the **Patron ID** and the **number of days since their last borrowing action**.
+
+### 2. **Overdue Check**
+- The program compares the number of days since the borrowing action (`daysDifference`) with the library's allowed due date (`dueDate`).
+
+#### **If the action is overdue:**
+- A message indicates the book is overdue:
+    ```text
+    -> Action is more than 10 days old for book with ID: [Book ID]
+    ```
+- The overdue penalty is calculated:
+    \[
+    \text{Penalty} = (\text{daysDifference} - \text{dueDate}) \times \text{penaltyRate}
+    \]
+- The overdue days are displayed:
+    ```text
+    Number of days overdue: [Days Overdue]
+    ```
+- The total penalty amount is shown:
+    ```text
+    Penalty: [Total Penalty] birr
+    ```
+
+### **If the action is within the due date:**
+- A message confirms that no penalty is applied:
+    ```text
+    -> Action is within 10 days for all books.
+    ```
+
+---
+
+### 3. **Display Borrowed Books Count**
+- The program displays the number of books currently borrowed by the patron:
+    ```text
+    You have borrowed [Number of Borrowed Books] books.
+    ```
+
+
+
+
+
+
+
 
 
 
