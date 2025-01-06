@@ -585,6 +585,53 @@ int main() {
             cout << "You have registered successfully with ID: " << id << " PLEASE SECURE YOUR ID IN A SAFE PLACE!\n";
             goto menu;
         }
+        //---------------------------------------Patron login-----------------------------------------:
+        else if (choice ==3) {
+            //Yafet's feature:
+            cout<<"Would like to login with your name or ID? \nIf by ID choose 1 and if by Name choose 2, choose anything else to reutrn to menu: ";
+            cin>>choose;
+            if(choose == 1) {
+                cout << "1. Search Patron by ID\n";//------------------
+                cout << "Enter patron ID: ";
+                cin >> searchId;
+                bool found = false;
+                for(int i = 0; i < totalPatrons; i++) {
+                    if(user_id[i][0] == searchId) {
+                        i = id;
+                        cout << "\nPatron found!\n";
+                        cout << "ID: " << user_id[i][0] << "\n";
+                        cout << "Name: " << user_name[i] << "\n";
+                        found = true;
+                    }
+                    }
+                    if(found == false) {
+                        cout << "Patron not found!\n";
+                        goto menu;
+                    }
+                } else if (choose == 2) {
+                        cout << "2. Search Patron by Name\n";//--------------------
+                        cout << "Enter patron name: ";
+                        cin.ignore();
+                        getline(cin, searchName);
+                        bool fund = false;
+                        for(int i = 0; i < totalPatrons; i++) {
+                            if(user_name[i] == searchName) {
+                                i = id;
+                                cout << "\nPatron found!\n";
+                                cout << "ID: " << user_id[id][0] << "\n";
+                                cout << "Name: " << user_name[id] << "\n";
+                                fund = true;
+                            } 
+                        }
+                        if(fund == false) {
+                            cout << "Patron not found!\n";
+                            goto menu;
+                        }
+
+                } else {
+                    goto menu;
+                }
+                //End of Yafet's feature
 
 
 
