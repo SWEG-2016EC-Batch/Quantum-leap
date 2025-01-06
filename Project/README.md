@@ -97,5 +97,6 @@ This feature allows the librarian to login to the system using either their pass
 - if they choose password ask the librarian to enter password
 - if they choose security question ask librarian to enter the answer for they security question
 
-
+### 2. Patron login
+This feature allows the patron to login using their password or the provided security question
 
