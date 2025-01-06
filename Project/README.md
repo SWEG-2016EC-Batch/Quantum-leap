@@ -151,6 +151,59 @@ This feature allows the patron to register along with password and security ques
     - `user_id[id][1]` increments to reflect the number of books borrowed.
     - `numBorrowings` increments to track the total borrowed books.
 
+## **Yerosan's Membership Cancellation documentation**
+
+## **How It Works**
+
+1. **Infinite Loop (`while (true)`)**  
+   - The program runs continuously, prompting for a valid **Patron ID**.  
+   - It terminates only when an invalid Patron ID is entered.
+
+2. **Patron Validation**  
+   - The entered `patronId` is checked against the `user_id` array, which stores patron data.  
+   - If a match is found, the program proceeds to check for borrowed books.
+
+3. **Unreturned Book Check**  
+   - If a patron has an unreturned book (`user_id[i][1] != 0`), membership cancellation is denied:  
+     ```text
+     Denied!  
+     Reason: Unreturned book
+     ```
+
+4. **Membership Cancellation Confirmation**  
+   - If no borrowed books are detected (`user_id[i][1] == 0`), the program asks for confirmation:  
+     ```text
+     Are you sure you want to cancel membership? (y for yes):
+     ```
+   - If the user enters `y`, membership is canceled, and the Patron ID is removed (`user_id[i][0] = 0`).
+
+5. **Invalid Patron ID Handling**  
+   - If the `patronId` is not found in the array, the program displays:  
+     ```text
+     Invalid patron ID!
+     ```
+
+---
+
+## **Code Flow**
+
+1. **User Input:**  
+   - Prompt the user to enter a `patronId`.
+
+2. **Validation Loop:**  
+   - Iterate through the `user_id` array to check if the `patronId` exists.
+
+3. **Check Borrowed Book Status:**  
+   - If a borrowed book is detected (`user_id[i][1] != 0`), display a denial message.
+
+4. **Confirmation for Cancellation:**  
+   - Ask for confirmation if no borrowed book exists.  
+   - If confirmed (`y`), set `user_id[i][0] = 0`.
+
+5. **Invalid Patron ID Handling:**  
+   - If no valid `patronId` is found, display an error message and exit the loop.
+
+
 
 
 
