@@ -29,7 +29,7 @@ This is a folder that contains our code for the Library Management system.
 
 
 
-  if choice is 4 display user_address,user_sex,user_name,user_id with their respective position in the array
+  if the choice option for library login  is 4 display user_address,user_sex,user_name,user_id with their respective position in the array
 
   
 
