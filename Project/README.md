@@ -97,7 +97,7 @@ This feature allows the librarian to login to the system using either their pass
 - if they choose password ask the librarian to enter password
 - if they choose security question ask librarian to enter the answer for they security question
 
-### 2. Patron registration
+### 2. Patron registration - Creating password for patron 
 This feature allows the patron to register along with password and security question.
 #### Process
 - Ask the patron to create password
