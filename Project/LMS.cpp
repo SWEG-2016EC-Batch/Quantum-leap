@@ -511,11 +511,6 @@ int main() {
 
             cout << "Enter your address: ";
             getline(cin, address);
-
-            cout<<"Please Enter the Password: ";
-            getline(cin, login_password);
-
-
 //end of Yonas Z feature.
 
 
