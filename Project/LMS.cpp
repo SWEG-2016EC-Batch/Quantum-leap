@@ -208,8 +208,8 @@ int main() {
                 //End of Yeabsira's feature
                     break;
                     case 2:
-                        cout<<"Enter the name of the book you want to add: ";
-                        cin>>book;
+                        cout<<"Enter the Id of the book you want to add: ";
+                        cin>>bookId;
                         booksId[numBooks] = bookId;
                         numBooks++;
                         cout<<"The book has been added successfully!";
