@@ -3,8 +3,8 @@ Quantum leap team repo
 \Yoseph Asrat Kebede 1535/16
 
 ## Flowchart
-`mermaid
-flowchart TD 
+```mermaid
+ graph TD 
  
     A([Start]) -->B[/Show Menu with options 
             0. Resigster as the Librarian
