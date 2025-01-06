@@ -206,16 +206,17 @@ int main() {
 
 
 
-
-
-
-
-
-
-
-
-
-
+//Yeabsira's feature: ----------
+                    case 1:
+                        cout<<"How many books should a patron be allowed to borrow? ";
+                        cin>>MAX_BORROWINGS;
+                        cout<<"The maximum number of books a patron can borrow has been set to "<<MAX_BORROWINGS<<endl;
+                        cout<<"How many days should a patron be allowed to keep a book? ";
+                        cin>>dueDate;
+                        cout<<"The maximum number of days a patron can borrow has been set to "<<dueDate<<endl;
+                        goto menu;
+                //End of Yeabsira's feature
+                    break;
 
 
 
@@ -774,6 +775,19 @@ int main() {
 
 
 
+//Yeabsira's feature:
+                        //History of borrowed books:
+                        cout<<"Do you want to look at your borrowing history? press \'y\' for yes: ";
+                        char history;
+                        cin>>history;
+                        if (history == 'y'){
+                            for (int j = 2; j < MAX_BORROWINGS+1; j++) {
+                                cout << "Books Borrowed with id: " << user_id[id][j] <<endl;
+                                cout << "You have borrowed a total of "<< user_id[id][1] << " books and you have " << MAX_BORROWINGS-user_id[id][1] << " books left to borrow."<<endl;
+                            }
+                        }
+                        //End of Yeabsira's feature
+                        break;
 
 
 
@@ -814,8 +828,14 @@ int main() {
 
 
 
-
-
+ // Yeabsira's feature
+        else if (choice ==5) {
+            cout << "----- Exiting the system. Goodbye! ------";
+            break;
+        }
+//End of Yeabsira's feature
+    return 0;
+}
 
 
 
