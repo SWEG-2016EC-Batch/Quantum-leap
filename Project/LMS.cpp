@@ -1084,50 +1084,14 @@ int main() {
             goto menu;
         }
 //End of Yerosan's features------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Yeabsira's feature
+        else if (choice ==5) {
+            cout << "----- Exiting the system. Goodbye! ------";
+            break;
+        }
+//End of Yeabsira's feature
+    
     }
-
-
-
-
-
-
-
-}
 return 0;
 
 }
