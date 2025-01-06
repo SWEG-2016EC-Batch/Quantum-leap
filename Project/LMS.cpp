@@ -667,47 +667,6 @@ int main() {
                 cout<<"2. Return a book"<<endl;
                 cin>>choose;
                 switch (choose) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                cout<<"---------You have successfully logged in!--------------"<<endl;
-                cout<<"What would you like to do?"<<endl;
-                cout<<"1. Borrow a book"<<endl;
-                cout<<"2. Return a book"<<endl;
-                cin>>choose;
-                switch (choose) {
 //Yafet's feature 
 //Borrow a book:
                     case 1:
