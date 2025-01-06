@@ -649,11 +649,11 @@ user_id[totalPatrons][0] = id;
                                         actionTime[id][2] = booksId[numBorrowings];
 
                                         // Display the stored information
-                                        cout << "Patron ID: " << actionTime[id][0] 
-                                            << " borrowed at: " 
+                                        cout << "Patron borrowed at: " 
                                             << ctime(reinterpret_cast<const time_t*>(&actionTime[consumerCount][1]));
                                         cout << "Borrowing recorded!\n";
                                         cout << "You have borrowed " << user_id[id][1] << " books\n";
+                                        goto menu;
                                         break;
                                     }
                                     break;
