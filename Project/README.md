@@ -134,7 +134,7 @@ The system aims to:
 - Borrow books (up to the maximum limit).
 - Return books and check penalties for overdue returns.
 - View borrowing history and cancel membership if necessary.
-## Flowchart
+# Flowchart
 ```mermaid
 graph TD
 
