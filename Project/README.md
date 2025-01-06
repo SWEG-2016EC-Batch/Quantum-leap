@@ -153,9 +153,9 @@ The system aims to:
   ## Yonas Zegeye
   - Made the patron registeration system
   - Daily report for the librarian
-  - Composed the Documentation for this Software
+  - Composed the Documentation for this Software which can found by this link: <em>https://docs.google.com/document/d/1d-NRArh_Hkx7EyBMDwiK9vRTveIfgKaZwCiBNomuJxM/edit?usp=sharing</em>
   ## Yoseph Asrat
-  - Made the Librarian's enviroment with default passwords and settings
+  - Made the Librarian's enviroment with default passwords and settings, along with the return book feature.
   - Made the time registeration system so that the patron's time of borrowing is known and when he returns it.
   - Composing and debugging the code.
 # Flowchart
