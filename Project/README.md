@@ -62,52 +62,11 @@ This section of the program calculates overdue penalties for borrowed books, dis
     ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   if the choice option for library login  is 4 display user_address,user_sex,user_name,user_id with their respective position in the array
-
-  
-
-
-  
-  
   if choice is 2  
   check if 
 
 
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
   
   </p>
 _______________________________________________________________________________________________________________________________________________________________
@@ -132,8 +91,6 @@ The system allows the librarian to retrieve a patron's information when they ret
  
 3. **Update Borrowing Records**:
   
-
-
 ---
 
 ## 2. Daily Borrowing Report
@@ -157,4 +114,43 @@ This feature allows the patron to register along with password and security ques
 - Ask the patron if they want to create security question login path
 - if they say yes, ask they patron to choose one question from the provided 3 questions
 - ask the patron to give answer for the quetion they've chosed
+
+  ## **Yerosan's Book Borrowing with book ID documentation**
+
+## **How It Works**
+
+### 1, **Book Availability Check**
+- The program prompts the user to enter a **Book ID**.  
+- It validates if the book exists and checks if it's already borrowed by another patron.  
+- If the book isn't available, it displays:
+    ```text
+    Sorry we currently don't have that book right now!
+    ```
+- If a slot is available (`borrowed_books[h][1] == 0`), it proceeds to assign the book.
+
+---
+
+### 2, **Duplicate Borrowing Prevention**
+- Before allowing a patron to borrow a book, the system checks if the patron has already borrowed the same book:
+    ```text
+    The patron has already borrowed book ID: [Book ID]
+    ```
+- This prevents duplication in the patron's borrowing record.
+
+---
+
+### 3. **Borrowing Confirmation**
+- If the book passes all checks, it is added to the patron's borrowing record:
+    ```text
+    Book ID: [Book ID] borrowed successfully  
+    by patron ID: [Patron ID]
+    ```
+
+- The borrowing status is updated:
+    - `borrowed_books[add][1]` stores the borrowed **Book ID**.
+    - `user_id[id][1]` increments to reflect the number of books borrowed.
+    - `numBorrowings` increments to track the total borrowed books.
+
+
+
 
