@@ -654,6 +654,49 @@ int main() {
 
 
 
+//End of Yoseph's feature and start of Yafet's feature
+                                //------Borrow a book by ID:
+                                    bool bookFound;
+                                    bookFound = false;
+
+                                    cout << "Enter the book's ID: ";
+                                    cin >> bookId;
+                                    for (int h; h < numBorrowings; h++) {
+                                        if (stoi(booksId[h][0]) == bookId) {
+                                            cout<<"Sorry we currently don't have that book right now! ";
+                                            goto books;
+                                        }
+                                        if (stoi(borrowed_books[h][1]) == bookId) {
+                                            cout<<"Sorry we currently don't have that book right now! ";
+                                            goto books;
+                                        }
+                                        if (stoi(borrowed_books[h][1])/1 == 0) {
+                                            add = h;
+                                            break;
+                                        }
+                                    }
+                                    for (int j = 0; j < 100; j++){
+                                        if (bookId == stoi(booksId[j][1])){
+                                            bookFound = true;
+                                            for (int k = 2; k < MAX_BORROWINGS+1; k++) {
+                                                if (user_id[id][k] == stoi(booksId[j][1])){
+                                                    cout << "The patron has already borrowed book ID: " << booksId[j][1] << "\n";
+                                                    break;
+                                                }    
+                                            }
+                                            for (int m = 0; m < MAX_BORROWINGS+1; m++) {
+                                                if(user_id[id][m]/1 == 0) {
+                                                    cout << "Book ID: " << booksId[j][1] << " borrowed successfully\nby patron ID: " << user_id[id][0] <<endl;
+                                                    break;
+                                                }
+                                            }     
+                                        }
+                                        if (!bookFound){
+                                            cout << "Invalid Book Id! \n";
+                                        }
+                                        borrowed_books[add][1] = bookId;
+                                        user_id[id][1]++;
+                                        numBorrowings++;
 
 
 
