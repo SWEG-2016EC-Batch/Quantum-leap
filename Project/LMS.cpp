@@ -79,6 +79,16 @@ int main() {
                 }
              }
 //---------------------end of yoseph's feature--------------------------
+            cout << "Register yourself as the new Library user";
+            cout << "Enter your name: ";
+            cin.ignore();
+            getline(cin, name);
+
+            cout << "Enter your sex: ";
+            getline(cin, sex);
+
+            cout << "Enter your address: ";
+            getline(cin, address);
 
 
 
