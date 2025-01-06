@@ -11,9 +11,8 @@ int main() {
     const int MAX_PATRONS = 1000;  // Maximum number of patrons
     const int MAX_BOOKS = 1000;  // Maximum number of books
     int MAX_BORROWINGS = 20, user_id[MAX_PATRONS][MAX_BORROWINGS+1], numBooks = 0, borrowerId[MAX_PATRONS];  // first column contains id, second one contains the number of books borrowed.      
-    char Lib_name[50], pswd[50];
     const char correctName[] = "Yoseph Asrat Kebede";
-    const char correctPassword[] = "IdmfSaved";
+    const char correctPassword[] = "14526342652";
     string user_name[MAX_PATRONS], name, sex, address, searchName; // first column of user name has the patron names, and the rest are the books they borrowed based on id.
     string user_sex[MAX_PATRONS]; 
     string user_address[MAX_PATRONS], login_password, log_pswd;
@@ -31,7 +30,7 @@ int main() {
 //Main menu:
         menu:
         cout << "\n********Library System Main Menu:********\n";
-        cout << "0. Resigster as the Librarian";
+        cout << "0. Resigster as the Librarian\n";
         cout << "1. Login Librarian\n";
         cout << "2. Register Patron\n";
         cout << "3. Login Patron\n";
@@ -60,7 +59,9 @@ int main() {
 //Login the Librarian
 //------------------------Yoseph's feature:
              while (true) {
+               char Lib_name[50], pswd[50];
                 cout << "Enter name: ";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cin.getline(Lib_name, 50);
                 cout << "Enter password: ";
                 cin.getline(pswd, 50);
