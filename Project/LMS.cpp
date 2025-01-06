@@ -58,31 +58,31 @@ int main() {
         }
 
 //----------------------------------end of Yonas Z's feature-----
+        if (choice == 0) {
+//Register the Librarian
+//------------------------Yoseph's feature:
+             while (true) {
+                char Lib_name[50], pswd[50];
+                cout << "Enter name: ";
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cin.getline(Lib_name, 50);
+                cout << "Enter password: ";
+                cin.getline(pswd, 50);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                if (strcmp(Lib_name, correctName) == 0 && strcmp(pswd, correctPassword) == 0) {
+                    cout << "Login successful!" << endl;
+                    break;
+                } else {
+                    errorCounter++;
+                    if (errorCounter >= maximumErrorAttempt) {
+                        cout << "Maximum number of attempts reached. Exiting the system. Goodbye!" << endl;
+                        return 0;
+                    } else {
+                        cout << "Incorrect name or password. Please try again." << endl;
+                    }
+                }
+             }
+//---------------------end of yoseph's feature--------------------------
 //----------------------Yonas Z's feature:
             cout << "Register yourself as the new Library Manager\n";
             cout << "Enter your name: ";
@@ -190,22 +190,22 @@ int main() {
                 }
                 cout<<"---------You have successfully logged in!--------------"<<endl;
 //----------------End of Yonas D's feature Start of Yoseph's features---------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            while(true) {
+                cout<<"You have entered the correct name and password. "<<endl;
+                lib_menu:
+                cout<<"\n------------- Librarian Section--------------\n"<<endl;
+                cout<<"What would you like to change: "<<endl;
+                cout<<"Option 1: Maximum number of books to be borrowed, and due dates."<<endl;
+                cout<<"Option 2: Add a book to library"<<endl;
+                cout<<"Option 3: Delete a book from the library"<<endl;
+                cout<<"Option 4: Display the daily report"<<endl;
+                cout<<"Option 5: Display the daily borrowing statistics"<<endl;
+                cout<<"Option 6: Search for a patron"<<endl;
+                cout<<"Option 7: Patrons with overdue books"<<endl;
+                cout<<"Option 8: Go back to Main Menu"<<endl;
+                int choose;
+                cin>>choose;
+                switch (choose) {
 //Yeabsira's feature: ----------
                     case 1:
                         cout<<"How many books should a patron be allowed to borrow? ";
@@ -217,34 +217,33 @@ int main() {
                         goto menu;
                 //End of Yeabsira's feature
                     break;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    case 2:
+                        cout<<"Enter the name of the book you want to add: ";
+                        cin>>book;
+                        cout<<"Enter the ID of the book you want to add: ";
+                        cin>>bookId;
+                        booksId[numBooks][0] = bookId;
+                        booksId[numBooks][1] = book;
+                        numBooks++;
+                        cout<<"The book has been added successfully!";
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        goto menu;
+                    break;
+                    case 3:
+                        cout<<"Enter the ID of the book you want to delete: ";
+                        cin>>bookId;
+                        for (int i = 0; i < numBooks; i++) {
+                            if (stoi(booksId[i][0]) == bookId) {
+                                booksId[i][0] = " ";
+                                booksId[i][1] = " ";
+                                numBooks--;
+                                numBorrowings--;
+                                cout<<"The book has been deleted successfully!";
+                                break;
+                            }
+                        }
+                        goto menu;
+                    break;
                     //-------------------Yonas Z's feature------------------------
                     case 4:
                         cout << "4. === Daily Report ==="<<endl;
@@ -340,33 +339,34 @@ int main() {
                         goto menu;
                         break;
                     //-------------------End of Yafet's feature------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ case 6:
+                        cout<<"Enter the Id of the patron you want to lookup: ";
+                        cin>>id;
+                        for (int l = 0; l < MAX_PATRONS; l++) {
+                            if (id == user_id[l][0]) {
+                                cout << "ID: " << user_id[l][0] << "\n";
+                                cout << "Name: " << user_name[l] << "\n";
+                                cout << "Sex: " << user_sex[l] << "\n";
+                                cout << "Address: " << user_address[l] << "\n";
+                                for (int j = 2; j < MAX_BORROWINGS+1; j++) {
+                                    cout << "Books Borrowed with id: " << user_id[l][j] <<endl;
+                                    borrow_count++;
+                                }
+                                cout<<"He has taken "<<user_id[l][1]<<" books"<<endl;
+                            } else {
+                                cout<<"No such Patron exits!";
+                                goto menu;
+                            }
+                        }
+                        goto menu;
+                        break;
+                    case 7:
+                        cout<<"Patrons with Overdue Books are: ";
+                        for(int i=0; i<totalPatrons; i++){
+                            chrono::system_clock::time_point now = chrono::system_clock::now();
+                            time_t currentTime = chrono::system_clock::to_time_t(now);
+                            secondsDifference = difftime(currentTime, actionTime[i][1]);
+                            daysDifference = secondsDifference / (60 * 60 * 24); // Convert seconds to days
                     //Yerosan's feature:
                             cout << "ID: " << actionTime[i][0]
                                 << ", Days since action: " << daysDifference;
@@ -381,33 +381,33 @@ int main() {
                              cout << "Penalty: " << total_penalty << "birr"<<endl;
                         }
                     //End of Yerosan's feature
+                goto menu;
+                        break;
+                    case 8:
+                        cout<<"Going back to main menu";
+                        goto menu;
+                    break;
+                    default:
+                        errorCounter=0;
+                        if (cin.fail() || choice < 1 || choice > 4) {
+                            cin.clear();
+                            cin.ignore();
+                            errorCounter++;
+                            if (errorCounter<maximumErrorAttempt) {
+                                    cout << "If you are not sure to about exiting.\n";
+                                    goto lib_menu;
+                            }
+                            else{
+                                    cout << "Exiting the system. Goodbye!\n";
+                                    return 0;
+                                }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        }
+                    break;
+                }
+//---------------------End of Yoseph's feature---------------------------------
+            }
+        }
     // ---------------------------Yoans Z's features----------------------
 //---------------------------------Register patron-------------------------------------------------------------
         else if (choice == 2) {
@@ -505,6 +505,17 @@ int main() {
                 }
             }
             //End of Yonas D's feature
+user_id[totalPatrons][0] = id;
+            user_name[totalPatrons] = name;
+            user_sex[totalPatrons] = sex;
+            user_address[totalPatrons] = address;
+            totalPatrons++;
+
+            cout << "You have registered successfully with ID: " << id << " PLEASE SECURE YOUR ID IN A SAFE PLACE!\n";
+            goto menu;
+        }
+        //---------------------------------------Patron login-----------------------------------------:
+        else if (choice ==3) {
             //Yafet's feature:
             cout<<"Would like to login with your name or ID? \nIf by ID choose 1 and if by Name choose 2, choose anything else to reutrn to menu: ";
             cin>>choose;
@@ -549,19 +560,8 @@ int main() {
                 } else {
                     goto menu;
                 }
-            
-
-
-
-
-
-
-
-
-
-
-
-//Yonas D's feature:
+                //End of Yafet's feature
+                //Yonas D's feature:
                while (true) {
                     cout << "Please Enter the Password:" << endl;
                     getline(cin, log_pswd);
@@ -647,28 +647,28 @@ int main() {
                                     user_id[id][1]++;
                                     numBorrowings++;
 //End of Yafet's feature and start of Yoseph's feature
+// Capture the current time
+                                    chrono::system_clock::time_point now = chrono::system_clock::now();
+                                    time_t currentTime = chrono::system_clock::to_time_t(now);
 
+                                    // Store the ID and the current time in the array
+                                    actionTime[id][0] = id;
+                                    actionTime[id][1] = currentTime;
+                                    if (!booksId[numBorrowings][0].empty()) {
+                                        actionTime[id][2] = stoi(booksId[numBorrowings][0]);
+                                    } else {
+                                        cout<<"Invalid input!";
+                                        goto menu;
+                                    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                    // Display the stored information
+                                    cout << "Patron ID: " << actionTime[id][0] 
+                                        << " borrowed at: " 
+                                        << ctime(reinterpret_cast<const time_t*>(&actionTime[consumerCount][1]));
+                                    
+                                    cout << "Borrowing recorded!\n";
+                                    cout << "You have borrowed " << user_id[id][1] << " books\n";
+                            } else if (choice == 2) {
 //End of Yoseph's feature and start of Yerosan's feature
                                 //------Borrow a book by ID:
                                     bool bookFound;
@@ -714,34 +714,34 @@ int main() {
                                         user_id[id][1]++;
                                         numBorrowings++;
 //End of Yerosan's feature and start of Yoseph's feature
+                                        // Capture the current time
+                                        chrono::system_clock::time_point now = chrono::system_clock::now();
+                                        time_t currentTime = chrono::system_clock::to_time_t(now);
 
+                                        // Store the ID and the current time in the array
+                                        actionTime[id][0] = id;
+                                        actionTime[id][1] = currentTime;
+                                        actionTime[id][2] = stoi(booksId[numBorrowings][0]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                        // Display the stored information
+                                        cout << "Patron ID: " << actionTime[id][0] 
+                                            << " borrowed at: " 
+                                            << ctime(reinterpret_cast<const time_t*>(&actionTime[consumerCount][1]));
+                                        cout << "Borrowing recorded!\n";
+                                        cout << "You have borrowed " << user_id[id][1] << " books\n";
+                                        break;
+                                    }
+                                    break;
+                            } else {
+                                goto menu;}
+                        break;
+                    case 2:
+// Continutation of Yoseph's features: ---------------------------------
+//--------Return a book:
+                        chrono::system_clock::time_point now = chrono::system_clock::now();
+                        time_t currentTime = chrono::system_clock::to_time_t(now);
+                        secondsDifference = difftime(currentTime, actionTime[id][1]);
+                        daysDifference = secondsDifference / (60 * 60 * 24); // Convert seconds to days
                         //Yerosan's feature
                         cout << "ID: " << actionTime[id][0]
                             << ", Days since action: " << daysDifference;
@@ -756,24 +756,25 @@ int main() {
                             cout << "Penalty: " << total_penalty << "birr"<<endl;
                         cout<<"You have borrowed "<<user_id[id][1]<<" books."<<endl;
                         //End of Yerosan's feautre
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        cout<<"Enter the id of the book you want to return: ";
+                        cin>>idd;
+                        for (int k = 0; k < MAX_BORROWINGS+1; k++) {
+                            if(user_id[id][k] == idd) {
+                                user_id[id][k] = 0;
+                                user_id[id][1]--;
+                                numBorrowings--;
+                                cout<<"The book has been returned successfully!"<<endl;
+                                for (int a = 0; a < numBorrowings; a++) {
+                                        if (borrowed_books[a][1] == "0") {
+                                            add = a;
+                                            break;
+                                        }
+                                    }
+                                borrowed_books[add][1] = '0';
+                                borrowed_books[add][0] = ' ';
+                                break;
+                            }
+                        }
 //Yeabsira's feature:
                         //History of borrowed books:
                         cout<<"Do you want to look at your borrowing history? press \'y\' for yes: ";
@@ -787,11 +788,10 @@ int main() {
                         }
                         //End of Yeabsira's feature
                         break;
-
-
-
-
-
+//End of Yoseph's features---------------------------------
+                }
+        }
+        else if (choice == 4) {
 //Start of Yerosan's feature's:---------------------------
             while (true){
                 bool patronFound;
