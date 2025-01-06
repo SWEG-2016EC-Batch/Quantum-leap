@@ -57,4 +57,36 @@ if choice is 1, ask the librarian to enter their password to login
   
   
   </p>
+_______________________________________________________________________________________________________________________________________________________________
+### Yafet's
+### Documentation for the Book Inventory System
+
+
+---
+
+## 1. Patron Information Retrieval
+
+The system allows the librarian to retrieve a patron's information when they return to borrow a book. This feature ensures that the patron's borrowing records are kept up-to-date and accurate. The system retrieves the patron's details using either their **unique ID** or **name**.
+
+### Functionality
+- **Input**: The librarian can search for a patron by entering either their unique ID or name.
+- **Output**: The system retrieves the patron's details, including: Name, sex, addressnique Identification Number and current borrowing records (list of borrowed books, due dates, and overdue status)
+
+### Process
+1. **Search by ID or Name**:
+ 
+2. **Retrieve Patron Information**:
+ 
+3. **Update Borrowing Records**:
+  
+
+
+---
+
+## 2. Daily Borrowing Report
+
+The system generates a comprehensive daily report summarizing all borrowing transactions. This report provides insights into patron activities, including the total number of borrowings, the average number of books borrowed per patron, and highlights any patrons who have reached their borrowing limit or have overdue books.
+
+---
+
 
