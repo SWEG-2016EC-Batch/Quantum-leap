@@ -505,17 +505,6 @@ int main() {
                 }
             }
             //End of Yonas D's feature
-
-
-
-
-
-
-
-
-
-
-
             //Yafet's feature:
             cout<<"Would like to login with your name or ID? \nIf by ID choose 1 and if by Name choose 2, choose anything else to reutrn to menu: ";
             cin>>choose;
@@ -560,7 +549,18 @@ int main() {
                 } else {
                     goto menu;
                 }
-                //End of Yafet's feature
+            
+
+
+
+
+
+
+
+
+
+
+
 
 
 
