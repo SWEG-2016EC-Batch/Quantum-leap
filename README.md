@@ -47,7 +47,7 @@ Quantum leap team repo
     K --> |option 5| O[calculate daily borrow statistics] 
     K --> |option 6| P[Search patron by Id] 
     K --> |option 7| Q[Display patron with overdue books] 
-    K --> |option 8|  B[/Show Menu with options 
+    K --> |option 8| B[/Show Menu with options 
             0. Resigster as the Librarian
             1. Login Librarian
             2. Register Patron 
