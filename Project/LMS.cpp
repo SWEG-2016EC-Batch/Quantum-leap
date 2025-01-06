@@ -186,6 +186,55 @@ int main() {
                 }
                 cout<<"---------You have successfully logged in!--------------"<<endl;
 //----------------End of Yonas D's feature Start of Yoseph's features---------------------
+             while(true) {
+                cout<<"You have entered the correct name and password. "<<endl;
+                lib_menu:
+                cout<<"\n------------- Librarian Section--------------\n"<<endl;
+                cout<<"What would you like to change: "<<endl;
+                cout<<"Option 1: Maximum number of books to be borrowed, and due dates."<<endl;
+                cout<<"Option 2: Add a book to library"<<endl;
+                cout<<"Option 3: Delete a book from the library"<<endl;
+                cout<<"Option 4: Display the daily report"<<endl;
+                cout<<"Option 5: Display the daily borrowing statistics"<<endl;
+                cout<<"Option 6: Search for a patron"<<endl;
+                cout<<"Option 7: Patrons with overdue books"<<endl;
+                cout<<"Option 8: Go back to Main Menu"<<endl;
+                int choose;
+                cin>>choose;
+                switch (choose) {
+
+
+
+
+
+
+
+
+                      break;
+                    case 2:
+                        cout<<"Enter the name of the book you want to add: ";
+                        cin>>book;
+                        cout<<"Enter the ID of the book you want to add: ";
+                        cin>>bookId;
+                        booksId[numBooks][0] = bookId;
+                        booksId[numBooks][1] = book;
+                        numBooks++;
+                        cout<<"The book has been added successfully!";
+                    break;
+                    case 3:
+                        cout<<"Enter the ID of the book you want to delete: ";
+                        cin>>bookId;
+                        for (int i = 0; i < numBooks; i++) {
+                            if (stoi(booksId[i][0]) == bookId) {
+                                booksId[i][0] = " ";
+                                booksId[i][1] = " ";
+                                numBooks--;
+                                numBorrowings--;
+                                cout<<"The book has been deleted successfully!";
+                                break;
+                            }
+                        }
+                    break;
 
 
 
