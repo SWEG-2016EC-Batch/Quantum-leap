@@ -19,7 +19,7 @@ This is a folder that contains our code for the Library Management system.
 
 
 
-if choice is 1, ask the librarian to enter their password to login 
+
 
 
 
@@ -88,5 +88,14 @@ The system allows the librarian to retrieve a patron's information when they ret
 The system generates a comprehensive daily report summarizing all borrowing transactions. This report provides insights into patron activities, including the total number of borrowings, the average number of books borrowed per patron, and highlights any patrons who have reached their borrowing limit or have overdue books.
 
 ---
+
+## Yonas Demise's Documentation
+### 1. Librarian login 
+This feature allows the librarian to login to the system using either their password or answering the security question.
+#### Process
+- Ask the librarian to choose between password and security question
+- if they choose password ask the librarian to enter password
+- if they choose security question ask librarian to enter the answer for they security question
+
 
 
