@@ -84,9 +84,7 @@ int main() {
                 }
              }
 //---------------------end of yoseph's feature--------------------------
-//----------------------Yonas Z's feature:
-
-//------------------------end of Yonas Z's feature and start of Yonas D's feature-------------------
+//------------------------start of Yonas D's feature-------------------
  cout<<"Please Enter the Password: ";
             getline(cin, login_password);
 
@@ -628,6 +626,24 @@ user_id[totalPatrons][0] = id;
                                             for (int m = 0; m < MAX_BORROWINGS+1; m++) {
                                                 if(user_id[id][m]/1 == 0) {
                                                     cout << "Book ID: " << booksId[j] << " borrowed successfully\nby patron ID: " << user_id[id][0] <<endl;
+                                                    borrowed_books[add] = bookId;
+                                                    user_id[id][1]++;
+                                                    numBorrowings++;
+            //End of Yerosan's feature and start of Yoseph's feature
+                                                    // Capture the current time
+                                                    chrono::system_clock::time_point now = chrono::system_clock::now();
+                                                    time_t currentTime = chrono::system_clock::to_time_t(now);
+            
+                                                    // Store the ID and the current time in the array
+                                                    actionTime[id][0] = id;
+                                                    actionTime[id][1] = currentTime;
+                                                    actionTime[id][2] = booksId[numBorrowings];
+            
+                                                    // Display the stored information
+                                                    cout << "Patron borrowed at: " 
+                                                        << ctime(reinterpret_cast<const time_t*>(&actionTime[consumerCount][1]));
+                                                    cout << "Borrowing recorded!\n";
+                                                    cout << "You have borrowed " << user_id[id][1] << " books\n";
                                                     break;
                                                 }
                                             }     
@@ -635,24 +651,6 @@ user_id[totalPatrons][0] = id;
                                         if (!bookFound){
                                             cout << "Invalid Book Id! \n";
                                         }
-                                        borrowed_books[add] = bookId;
-                                        user_id[id][1]++;
-                                        numBorrowings++;
-//End of Yerosan's feature and start of Yoseph's feature
-                                        // Capture the current time
-                                        chrono::system_clock::time_point now = chrono::system_clock::now();
-                                        time_t currentTime = chrono::system_clock::to_time_t(now);
-
-                                        // Store the ID and the current time in the array
-                                        actionTime[id][0] = id;
-                                        actionTime[id][1] = currentTime;
-                                        actionTime[id][2] = booksId[numBorrowings];
-
-                                        // Display the stored information
-                                        cout << "Patron borrowed at: " 
-                                            << ctime(reinterpret_cast<const time_t*>(&actionTime[consumerCount][1]));
-                                        cout << "Borrowing recorded!\n";
-                                        cout << "You have borrowed " << user_id[id][1] << " books\n";
                                         goto menu;
                                         break;
                                     }
