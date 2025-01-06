@@ -112,7 +112,12 @@ This feature allows the patron to register along with password and security ques
 #### Process
 - Ask the patron to create password
 - Ask the patron if they want to create security question login path
-- if they say yes, ask they patron to choose one question from the provided 3 questions
+- if they say yes, ask they patron to choose one question from the provided 3 questions:
+  ```
+          What is your favorite color?
+          What number did you like?
+          What is the name of your favorite movie?
+  ```
 - ask the patron to give answer for the quetion they've chosed
 
   ## **Yerosan's Book Borrowing with book ID documentation**
